@@ -255,7 +255,7 @@
 							No tienes cuenta?
 						</span>
 
-						<a class="txt2" href="#">
+						<a class="txt2" href="formulario.jsp">
 							Registrate Aqui
 						</a>
 					</div>

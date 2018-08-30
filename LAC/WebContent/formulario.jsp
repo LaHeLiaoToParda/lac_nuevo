@@ -187,7 +187,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>LOGIN</h2>
+                        <h2>Formulario</h2>
                     </div>
                 </div>
             </div>
