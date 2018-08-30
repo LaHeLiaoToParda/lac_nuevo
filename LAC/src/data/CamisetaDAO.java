@@ -187,7 +187,7 @@ public class CamisetaDAO implements ICamisetaDAO {
             ConexionDB con = new ConexionDB();
             st = con.getConnection().createStatement();
             rs = st.executeQuery("SELECT c.id, c.color, c.precio, c.genero, c.talla,"
-            					+" c.categoria, c.stock, c.imagen"
+            					+" c.categoria, c.stock, c.imagen, c.descripcion"
             					+" FROM camisetas c"
             					+" WHERE id ='" +id+ "'");
             while (rs.next()) {   	
@@ -216,7 +216,7 @@ public class CamisetaDAO implements ICamisetaDAO {
             ConexionDB con = new ConexionDB();
             st = con.getConnection().createStatement();
             //Camiseta(int id, Categoria categoria, float precio, Talla talla, Genero genero, Color color,String url, int stock){
-            String q = "INSERT INTO `camisetas` VALUES ('" + c.getId() + "','"+ c.getCategoria() +"','" + c.getPrecio() + c.getPrecio() + "','" + c.getGenero() + "','" + c.getTalla() + "','" + c.getCategoria() + "','" + c.getStock() +"','" + c.getUrl() + "')";
+            String q = "INSERT INTO `camisetas` VALUES ('" + c.getId() + "','"+ c.getCategoria() +"','" + c.getPrecio() + c.getPrecio() + "','" + c.getGenero() + "','" + c.getTalla() + "','" + c.getCategoria() + "','" + c.getStock() +"','" + c.getUrl() + "','" + c.getDescripcion()+ "')";
             System.out.println(q);
             int i = st.executeUpdate(q);
             con.getConnection().close();

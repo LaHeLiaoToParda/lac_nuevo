@@ -220,7 +220,7 @@
                 <h2>${Camiseta.categoria}</h2>
             </a>
             <p class="product-price">${Camiseta.precio}</p>
-            <p class="product-desc">${Camiseta.descripcion}.</p>
+            <p class="product-desc">${Camiseta.descripcion}</p>
 
             
                 <div >
