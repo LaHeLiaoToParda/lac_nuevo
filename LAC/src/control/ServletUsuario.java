@@ -12,28 +12,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import data.CamisetaDAO;
 import model.Camiseta;
-
+import model.Usuario;
 import services.CamisetaService;
 
 /**
- * Servlet implementation class ServletListado
+ * Servlet implementation class ServletUsuario
  */
-@WebServlet("/ServletListado")
-public class ServletListado extends HttpServlet {
+@WebServlet("/ServletUsuario")
+public class ServletUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public ServletListado() {
-		super();
-
-	}
-
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ServletUsuario() {
+        super();
+    }
+    
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		List<Camiseta> cam;
+		List<Usuario> usu;
 
 		try {
 
@@ -103,49 +102,17 @@ public class ServletListado extends HttpServlet {
 		}
 	}
 
-	/*
-	 * operacion = request.getParameter("operacion"); DAOPais op = new
-	 * DAOPais();
-	 * 
-	 * if (operacion.equals("alta")) { //ALTA op.Alta(recogerDatos(request));
-	 * response.sendRedirect("paises?operacion=listado"); } else if
-	 * (operacion.equals("baja")) { // BAJA
-	 * op.Baja(request.getParameter("cod"));
-	 * response.sendRedirect("paises?operacion=listado"); } else if
-	 * (operacion.equals("detalle")) { // DETALLE request.setAttribute("paises",
-	 * op.Detalle(request.getParameter("cod"))); RequestDispatcher view =
-	 * request.getRequestDispatcher("/detalle.jsp"); view.forward(request,
-	 * response); } else if (operacion.equals("modificacion")) { // MODIFICACION
-	 * request.setAttribute("paises", op.Detalle(request.getParameter("cod")));
-	 * RequestDispatcher view = request.getRequestDispatcher("/update.jsp");
-	 * view.forward(request, response); } else if (operacion.equals("update")) {
-	 * // UPDATE op.Update(recogerDatos(request));
-	 * response.sendRedirect("paises?operacion=listado"); } else if
-	 * (operacion.equals("listado")) { // LISTADO request.setAttribute("paises",
-	 * op.Listado()); RequestDispatcher view =
-	 * request.getRequestDispatcher("/listado.jsp"); view.forward(request,
-	 * response); }
-	 * 
-	 */
-
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// response.getWriter().append("Served at:
-		// ").append(request.getContextPath());
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// doGet(request, response);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
 	}
 
