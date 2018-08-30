@@ -7,7 +7,6 @@ public class Principal {
 		new Test().prueba1();
 		//Test.prueba2();
 		//Test.prueba3();
-		System.out.println("dd");
 	}
 
 }
