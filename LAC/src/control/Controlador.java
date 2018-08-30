@@ -81,7 +81,8 @@ public class Controlador extends HttpServlet {
                 request.setAttribute("Lista", cam);
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
-            }else
+            }
+            else
             {
             	RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
             	view.forward(request, response);
