@@ -42,13 +42,10 @@ public class ServletListado extends HttpServlet {
 
 			String operacion = request.getParameter("operacion");
 			String genero;
-			if (operacion.equalsIgnoreCase("genero"))// 1
-			{
-
+			if (operacion.equalsIgnoreCase("genero")) {
 				genero = request.getParameter("genero");
-
-				if (genero.equalsIgnoreCase("HOMBRE"))// 2
-				{
+				
+				if (genero.equalsIgnoreCase("HOMBRE")) {
 					String categoria = request.getParameter("categoria");
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
 					request.setAttribute("Lista", cam);
@@ -67,7 +64,6 @@ public class ServletListado extends HttpServlet {
 						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
 					}
-
 				} else if (genero.equalsIgnoreCase("MUJER")) {
 					String categoria = request.getParameter("categoria");
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
@@ -102,7 +98,6 @@ public class ServletListado extends HttpServlet {
 				request.setAttribute("Lista1", cami);
 				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
 				view.forward(request, response);
-				
 			}
 
 		} catch (Exception e) {
