@@ -188,23 +188,42 @@
         <!-- Single Product Thumb -->
         <div class="single_product_thumb clearfix">
             
-                <img src="img/camisetas/1.jpg" alt="">
+                <img src="${Camiseta.url}" alt="">
                 
             </div>
         </div>
+        
+        <!-- <!-- Form -->
+            <form class="cart-form clearfix" method="post">
+                Select Box
+                <div class="select-box d-flex mt-50 mb-30">
+                    <select name="select" id="productSize" class="mr-5">
+                        <option value="value">Size: XL</option>
+                        <option value="value">Size: X</option>
+                        <option value="value">Size: M</option>
+                        <option value="value">Size: S</option>
+                    </select>
+                    <select name="select" id="productColor">
+                        <option value="value">Color: Black</option>
+                        <option value="value">Color: White</option>
+                        <option value="value">Color: Red</option>
+                        <option value="value">Color: Purple</option>
+                    </select>
+                </div>
+            </form> -->
 
         <!-- Single Product Description -->
         <div class="single_product_desc clearfix">
-            <span>Modelo_corto</span>
-            <a href="cart.html">
-                <h2>Corto</h2>
+            <span>${Camiseta.genero}</span>
+            <!-- <a href="cart.html"> -->
+                <h2>${Camiseta.categoria}</h2>
             </a>
-            <p class="product-price">65.00 </p>
-            <p class="product-desc">Camiseta corta de algodon negro.</p>
+            <p class="product-price">${Camiseta.precio}</p>
+            <p class="product-desc">${Camiseta.descripcion}.</p>
 
             
                 <div >
-                    <span>TALLA: </span>
+                    <span>TALLA: ${Camiseta.talla}</span>
                     <span>COLOR: ${Camiseta.color}</span>
                 </div>
                 <!-- Cart & Favourite Box -->
