@@ -265,10 +265,11 @@
 									<div class="single-product-wrapper">
 										<!-- Product Image -->
 										<div class="product-img">
-											<img src="img/product-img/product-1.jpg" alt="">
+											<img src="${mi.url}" alt="">
 											<!-- Hover Thumb -->
-											<img class="hover-img" src="img/product-img/product-2.jpg"
+											<!-- <img class="hover-img" src="img/product-img/product-2.jpg"
 												alt="">
+ -->
 
 											<!-- Product Badge -->
 											<div class="product-badge offer-badge">
