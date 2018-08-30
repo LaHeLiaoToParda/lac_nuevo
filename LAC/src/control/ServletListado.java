@@ -1,8 +1,6 @@
 package control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +14,6 @@ import data.CamisetaDAO;
 import model.Camiseta;
 
 import services.CamisetaService;
-import services.ICamisetaService;
 
 /**
  * Servlet implementation class ServletListado
