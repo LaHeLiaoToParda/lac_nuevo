@@ -25,6 +25,18 @@ public class CamisetaService implements ICamisetaService {
 	public Camiseta mostrarFichaTecnicaCamiseta(int id) {
 		return CamisetaDAO.mostrarFichaTecnicaCamiseta(id);
 	}
+
+	public List<Camiseta> mostrarCamisetasCategoria(String categoria) {
+		return CamisetaDAO.mostrarCamisetasCategoria(categoria);
+	}
+
+	public List<Camiseta> mostrarCamisetasTalla(String talla) {
+		return CamisetaDAO.mostrarCamisetasTalla(talla);
+	}
+
+	public void Alta(Camiseta c) {
+		CamisetaDAO.Alta(c);
+	}
 	
 	
 }

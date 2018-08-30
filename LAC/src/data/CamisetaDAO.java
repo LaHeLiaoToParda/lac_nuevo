@@ -209,7 +209,6 @@ public class CamisetaDAO implements ICamisetaDAO {
 	}
 	
 	//temporal
-	@Override
     public void Alta(Camiseta c) {
         Statement st = null;
         try {
@@ -225,8 +224,5 @@ public class CamisetaDAO implements ICamisetaDAO {
             Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-	
-	
-	
+    
 }
