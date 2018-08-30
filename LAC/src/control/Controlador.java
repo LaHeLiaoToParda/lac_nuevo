@@ -61,7 +61,7 @@ public class Controlador extends HttpServlet {
             {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("MANGA_CORTA");
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("/camisetas_Manga_Corta.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
                 view.forward(request, response);
             }
             else if (busqueda.equalsIgnoreCase("manga larga") || busqueda.equalsIgnoreCase("camisetas larga")
@@ -89,16 +89,14 @@ public class Controlador extends HttpServlet {
     }
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		processRequest(request, response);
 	}
 
 }
