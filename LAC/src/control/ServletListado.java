@@ -93,6 +93,16 @@ public class ServletListado extends HttpServlet {
 				request.setAttribute("Lista", cam);
 				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
 				view.forward(request, response);
+			} else if(operacion.equalsIgnoreCase("id")){
+				Camiseta cami = new Camiseta();
+				String id = request.getParameter("id");
+				int id1= Integer.parseInt(id);
+				
+				cami = new CamisetaService().mostrarFichaTecnicaCamiseta(id1);
+				request.setAttribute("Lista1", cami);
+				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
+				view.forward(request, response);
+				
 			}
 
 		} catch (Exception e) {
