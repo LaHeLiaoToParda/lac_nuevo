@@ -272,30 +272,27 @@
  -->
 
 											<!-- Product Badge -->
-											<div class="product-badge offer-badge">
+											<!-- <div class="product-badge offer-badge">
 												<span>-30%</span>
-											</div>
+											</div> -->
 											<!-- Favourite -->
-											<div class="product-favourite">
+											<!-- <div class="product-favourite">
 												<a href="#" class="favme fa fa-heart"></a>
-											</div>
+											</div> -->
 										</div>
 
 										<!-- Product Description -->
 										<div class="product-description">
-											<span>${mi.categoria}</span> <a
-												href="single-product-details.html">
-												<h6>${mi.color}</h6>
-											</a>
-											<p class="product-price">${mi.precio}</p>
-
+											<%-- <span>${mi.categoria}</span> --%>
+											<p class="product-price">Talla ${mi.talla}  -  ${mi.precio} €</p>
+												<h6><a href="ServletListado?operacion=id&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
-											<div class="hover-content">
-												<!-- Add to Cart -->
+											<!-- <div class="hover-content">
+												Add to Cart
 												<div class="add-to-cart-btn">
 													<a href="#" class="btn essence-btn">Add to Cart</a>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>

@@ -46,6 +46,7 @@ public class CamisetaDAO implements ICamisetaDAO {
                 c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 c.setStock(rs.getInt("stock"));
                 c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
                 listadoCamisetas.add(c);
             }
             con.getConnection().close();
@@ -76,6 +77,7 @@ public class CamisetaDAO implements ICamisetaDAO {
                 c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 c.setStock(rs.getInt("stock"));
                 c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
                 camiCatGenero.add(c);
             }
             con.getConnection().close();
@@ -105,6 +107,7 @@ public class CamisetaDAO implements ICamisetaDAO {
                 c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 c.setStock(rs.getInt("stock"));
                 c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
                 camisetasGenero.add(c);
             }
             con.getConnection().close();
@@ -134,6 +137,7 @@ public class CamisetaDAO implements ICamisetaDAO {
                 c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 c.setStock(rs.getInt("stock"));
                 c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
                 camisetasCategoria.add(c);
             }
             con.getConnection().close();
@@ -163,6 +167,7 @@ public class CamisetaDAO implements ICamisetaDAO {
                 c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 c.setStock(rs.getInt("stock"));
                 c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
                 camisetasTalla.add(c);
             }
             con.getConnection().close();
@@ -194,6 +199,7 @@ public class CamisetaDAO implements ICamisetaDAO {
                 c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 c.setStock(rs.getInt("stock"));
                 c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
             }
             con.getConnection().close();
         } catch (SQLException ex) {

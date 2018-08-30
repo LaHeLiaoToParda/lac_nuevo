@@ -273,13 +273,12 @@
 											<img src="${mi.url}" alt="">
 											<!-- Hover Thumb -->
 											<!-- <img class="hover-img" src="img/product-img/product-2.jpg"
-												alt="">
- -->
-<!-- 											Product Badge
-											<div class="product-badge offer-badge">
+												alt="">-->
+											<!-- Product Badge -->
+											<!-- <div class="product-badge offer-badge">
 												<span>-30%</span>
 											</div> -->
-<!-- 											Favourite
+											<!--Favourite
 											<div class="product-favourite">
 												<a href="#" class="favme fa fa-heart"></a>
 											</div> -->
@@ -288,15 +287,15 @@
 										<!-- Product Description -->
 										<div class="product-description">
 											<%-- <span>${mi.categoria}</span> --%>
-											<p class="product-price">${mi.precio} €</p>
-												<h6><a href="#" class="btn essence-btn">VER PRODUCTO</a></h6>
+											<p class="product-price">Talla ${mi.talla}  -  ${mi.precio} €</p>
+												<h6><a href="ServletListado?operacion=id&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
-											<div class="hover-content">
-												<!-- Add to Cart -->
+											<!-- <div class="hover-content">
+												Add to Cart
 												<div class="add-to-cart-btn">
 													<a href="#" class="btn essence-btn">Add to Cart</a>
 												</div>
-											</div>
+											</div> -->
 										</div>
 									</div>
 								</div>
