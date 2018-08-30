@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -240,7 +241,7 @@
 									<!-- Total Products -->
 									<div class="total-products">
 										<p>
-											<span>186</span> productos encontrados
+											<span>${fn:length(Lista)}</span> productos encontrados
 										</p>
 									</div>
 								</div>
