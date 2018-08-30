@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%> --%>
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +59,7 @@
                                         <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga Larga</a></li>
 									</ul>
 									<ul class="single-mega cn-col-4">
-										<li class="title"><a  href="operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
+										<li class="title"><a  href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga Corta</a></li>
                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Manga Larga</a></li>
@@ -216,7 +218,7 @@
 							<div class="catagories-menu">
 								<ul id="menu-content2" class="menu-content collapse show">
 									<!-- Single Item -->
-									<li><a href="ServletListado?operacion=genero&genero=MUJER">Mujer</a>
+									<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">Mujer</a>
 										<ul class="sub-menu collapse show" id="clothing">
 											<li><a href="ServletListado?operacion=genero&operacion2=categoria&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
 											<li><a href="ServletListado?operacion=genero&operacion2=categoria&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
@@ -254,11 +256,10 @@
 									<div class="single-product-wrapper">
 										<!-- Product Image -->
 										<div class="product-img">
-											<img src="img/product-img/product-1.jpg" alt="">
+											<img src="${mi.url}" alt="">
 											<!-- Hover Thumb -->
-											<img class="hover-img" src="img/product-img/product-2.jpg"
-												alt="">
-
+											<!-- <img class="hover-img" src="img/product-img/product-2.jpg"
+												alt=""> -->
 <!-- 											Product Badge
 											<div class="product-badge offer-badge">
 												<span>-30%</span>
@@ -274,8 +275,8 @@
 											<%-- <span>${mi.categoria}</span> --%>
 											<a href="single-product-details.html">
 											</a>
-											<p class="product-price">${mi.precio}</p>
-											<h6><a href="" class="btn essence-btn">VER PRODUCTO</a></h6>
+											<p class="product-price">Talla ${mi.talla}  -  ${mi.precio}€</p>
+											<h6><a href="ServletListado?operacion=id&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
 											<div class="hover-content">
 												<!-- Add to Cart -->
