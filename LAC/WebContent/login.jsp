@@ -220,14 +220,14 @@
     
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form action="ControlSesiones" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						LOGIN
 					</span>
 					<span class="login100-form-title p-b-48">
 						<i class="zmdi zmdi-font"></i>
 					</span>
-					<form action="ControlSesiones" method="POST">
+					
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="dni">
 						<span class="focus-input100" data-placeholder="DNI"></span>
@@ -259,7 +259,7 @@
 							Registrate Aqui
 						</a>
 					</div>
-					</form>
+					
 				</form>
 			</div>
 		</div>

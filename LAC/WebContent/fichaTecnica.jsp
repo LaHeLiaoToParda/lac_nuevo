@@ -90,18 +90,19 @@
 					</form>
 				</div>
 				<!-- Favourite Area -->
-				<div class="favourite-area">
+				<!--<div class="favourite-area">
 					<a href="#"><img src="img/core-img/heart.svg" alt=""></a>
 				</div>
+				-->
 				<!-- User Login Info -->
 				<div class="user-login-info">
-					<a href="#"><img src="img/core-img/user.svg" alt=""></a>
+					<a href="ServletListado?operacion=login"><img src="img/core-img/user.svg" alt=""></a>
 				</div>
-				<!-- Cart Area(Donde irá el número de camisetas añadidas al carrito) -->
-				<div class="cart-area">
+				<!-- Cart Area -->
+				<!--<div class="cart-area">
 					<a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg"
-						alt=""> <span></span></a>
-				</div>
+						alt=""> <span>3</span></a>
+				</div>-->
 			</div>
 
 		</div>
