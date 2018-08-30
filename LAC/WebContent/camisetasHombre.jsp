@@ -224,9 +224,9 @@
 									<!-- Single Item -->
 									<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">Hombre</a>
 										<ul class="sub-menu collapse show" id="clothing">
-											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
+											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA CORTA">Camiseta Maga Corta</a></li>
 											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Camiseta Tirantes</a></li>
-											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
+											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA LARGA">Camiseta Manga Larga</a></li>
 										</ul></li>
 								</ul>
 							</div>

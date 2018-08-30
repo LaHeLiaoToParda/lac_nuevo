@@ -49,10 +49,10 @@ public class ServletListado extends HttpServlet {
 					String categoria = request.getParameter("categoria");
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
 					request.setAttribute("Lista", cam);
-					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
+					if (categoria.equalsIgnoreCase("MANGA CORTA")) {
 						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
+					} else if (categoria.equalsIgnoreCase("MANGA LARGA")) {
 						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
@@ -68,10 +68,10 @@ public class ServletListado extends HttpServlet {
 					String categoria = request.getParameter("categoria");
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
 					request.setAttribute("Lista", cam);
-					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
+					if (categoria.equalsIgnoreCase("MANGA CORTA")) {
 						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
+					} else if (categoria.equalsIgnoreCase("MANGA LARGA")) {
 						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
