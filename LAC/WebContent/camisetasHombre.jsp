@@ -56,16 +56,16 @@
 									<ul class="single-mega cn-col-4">
 										<li class="title"><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
 				
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">MANGA_CORTA</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
                                         <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">MANGA_LARGA</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
 
 									</ul>
 									<ul class="single-mega cn-col-4">
 										 <li class="title"><a  href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
-                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">MANGA_CORTA</a></li>
+                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">MANGA_LARGA</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
 
 									<div class="single-mega cn-col-4">
@@ -226,7 +226,7 @@
 										<ul class="sub-menu collapse show" id="clothing">
 											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
 											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Camiseta Tirantes</a></li>
-											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Camiseta MANGA_LARGA</a></li>
+											<li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
 										</ul></li>
 								</ul>
 							</div>
