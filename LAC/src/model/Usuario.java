@@ -3,22 +3,26 @@ package model;
 public class Usuario
 {
 
+	private String dni;
 	private String nombre;
 	private String apellidos;
-	private String contrasenia;
 	private Rol rol;
-	private String dni;
+	private String contrasena;
+	private String direccion;
 	
-	public Usuario(String nombre, String apellidos, String contrasenia, Rol rol, String dni)
-	{
+	
+	public Usuario(String dni, String nombre, String apellidos, Rol rol, String contrasena, String direccion) {
 		super();
+		this.dni = dni;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.contrasenia = contrasenia;
 		this.rol = rol;
-		this.dni = dni;
+		this.contrasena = contrasena;
+		this.direccion = direccion;
 	}
 
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -35,12 +39,12 @@ public class Usuario
 		this.apellidos = apellidos;
 	}
 
-	public String getContrasenia() {
-		return contrasenia;
+	public String getContrasena() {
+		return contrasena;
 	}
 
-	public void setContrasenia(String contrasenia) {
-		this.contrasenia = contrasenia;
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
 	}
 
 	public Rol getRol() {
