@@ -50,13 +50,13 @@ public class ServletListado extends HttpServlet {
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
 					request.setAttribute("Lista", cam);
 					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetas_Manga_Corta.jsp");
+						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetas_Manga_Larga.jsp");
+						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetas_Tirantes.jsp");
+						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("SOLO")) {
 						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
@@ -69,13 +69,13 @@ public class ServletListado extends HttpServlet {
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
 					request.setAttribute("Lista", cam);
 					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetas_Manga_Corta.jsp");
+						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetas_Manga_Larga.jsp");
+						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetas_Tirantes.jsp");
+						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 						view.forward(request, response);
 					} else if (categoria.equalsIgnoreCase("SOLO")) {
 						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);

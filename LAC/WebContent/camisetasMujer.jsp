@@ -220,9 +220,9 @@
 									<!-- Single Item -->
 									<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">Mujer</a>
 										<ul class="sub-menu collapse show" id="clothing">
-											<li><a href="ServletListado?operacion=genero&operacion2=categoria&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
-											<li><a href="ServletListado?operacion=genero&operacion2=categoria&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
-											<li><a href="ServletListado?operacion=genero&operacion2=categoria&genero=MUJER&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
+											<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
+											<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
+											<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
 										</ul></li>
 
 								</ul>
