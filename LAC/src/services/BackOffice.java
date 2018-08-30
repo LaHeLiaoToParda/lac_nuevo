@@ -12,9 +12,10 @@ public class BackOffice implements IBackOffice {
 		backOfficeDAO.altaUsuario(u);
 	}
 	
-	public void bajaUsuario(Usuario u) {
-		backOfficeDAO.bajaUsuario(u);
-	}
+//	funcion para ajustesCuentaUsuario.jsp o un menu de admin, para el 3er Sprint
+//	public void bajaUsuario(Usuario u) {
+//		backOfficeDAO.bajaUsuario(u);
+//	}
 
 	public void altaCamiseta(Camiseta c) {
 		backOfficeDAO.altaCamiseta(c);

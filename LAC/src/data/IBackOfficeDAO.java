@@ -6,7 +6,7 @@ import model.Usuario;
 public interface IBackOfficeDAO {
 	
 	public void altaUsuario(Usuario u);
-	public void bajaUsuario(Usuario u);
+//	public void bajaUsuario(Usuario u); para 3er Sprint
 	public void altaCamiseta(Camiseta c);
 	public void bajaCamiseta(Camiseta c);
 }

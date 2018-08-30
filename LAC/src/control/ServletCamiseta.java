@@ -8,7 +8,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import data.BackOfficeDAO;
 import model.Camiseta;
+import model.Categoria;
+import model.Color;
+import model.Genero;
+import model.Talla;
+import model.Usuario;
 
 
 /**
@@ -28,71 +35,30 @@ public class ServletCamiseta extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		List<Camiseta> cam;
+		Camiseta c = new Camiseta();
 
 		try {
-
 			String operacion = request.getParameter("operacion");
-			String genero;
-//			if (operacion.equalsIgnoreCase("genero")) {
-//				genero = request.getParameter("genero");
-//				
-//				if (genero.equalsIgnoreCase("HOMBRE")) {
-//					String categoria = request.getParameter("categoria");
-//					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
-//					request.setAttribute("Lista", cam);
-//					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-//						view.forward(request, response);
-//					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-//						view.forward(request, response);
-//					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-//						view.forward(request, response);
-//					} else if (categoria.equalsIgnoreCase("SOLO")) {
-//						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
-//						request.setAttribute("Lista", cam);
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-//						view.forward(request, response);
-//					}
-//				} else if (genero.equalsIgnoreCase("MUJER")) {
-//					String categoria = request.getParameter("categoria");
-//					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
-//					request.setAttribute("Lista", cam);
-//					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-//						view.forward(request, response);
-//					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-//						view.forward(request, response);
-//					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-//						view.forward(request, response);
-//					} else if (categoria.equalsIgnoreCase("SOLO")) {
-//						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
-//						request.setAttribute("Lista", cam);
-//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-//						view.forward(request, response);
-//					}
-//				}
-//			} else if (operacion.equalsIgnoreCase("listado")) {
-//				cam = new CamisetaDAO().listadoCamisetas();
-//				request.setAttribute("Lista", cam);
-//				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
-//				view.forward(request, response);
-//				
-//			} else if(operacion.equalsIgnoreCase("id")){
-//				Camiseta camiseta = new Camiseta();
-//				String id = request.getParameter("id");
-//				int idCamiseta= Integer.parseInt(id);
-//				
-//				camiseta = new CamisetaService().mostrarFichaTecnicaCamiseta(idCamiseta);
-//				request.setAttribute("Camiseta", camiseta);
-//				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
-//				view.forward(request, response);
-//			}
-
+			
+			if(operacion.equalsIgnoreCase("alta")) {
+				c.setId(Integer.parseInt(request.getParameter("id")));
+				c.setColor(Color.valueOf(request.getParameter("color")));
+				c.setPrecio(Float.parseFloat(request.getParameter("precio")));
+				c.setGenero(Genero.valueOf(request.getParameter("genero")));
+				c.setTalla(Talla.valueOf(request.getParameter("talla")));
+				c.setCategoria(Categoria.valueOf(request.getParameter("categoria")));
+				c.setStock(Integer.parseInt(request.getParameter("stock")));
+				c.setUrl(request.getParameter("url"));
+				c.setDescripcion(request.getParameter("descripcion"));
+				
+				new BackOfficeDAO().altaCamiseta(c);
+				
+			} else if(operacion.equalsIgnoreCase("baja")) {
+//				Para el 3er Sprint
+//				c.setId(Integer.parseInt(request.getParameter("id")));
+				
+//				new BackOfficeDAO().bajaCamiseta(c);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
