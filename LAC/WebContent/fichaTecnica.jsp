@@ -193,8 +193,8 @@
             </div>
         </div>
         
-        <!-- <!-- Form -->
-            <form class="cart-form clearfix" method="post">
+         <!-- Form -->
+           <!--  <form class="cart-form clearfix" method="post">
                 Select Box
                 <div class="select-box d-flex mt-50 mb-30">
                     <select name="select" id="productSize" class="mr-5">
@@ -211,10 +211,11 @@
                     </select>
                 </div>
             </form> -->
+          
 
         <!-- Single Product Description -->
         <div class="single_product_desc clearfix">
-            <span>${Camiseta.genero}</span>
+            <span>Genero: ${Camiseta.genero}</span>
             <!-- <a href="cart.html"> -->
                 <h2>${Camiseta.categoria}</h2>
             </a>
@@ -229,11 +230,11 @@
                 <!-- Cart & Favourite Box -->
                 <div class="cart-fav-box d-flex align-items-center">
                     <!-- Cart -->
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                    <!-- <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button> -->
                     <!-- Favourite -->
-                    <div class="product-favourite ml-4">
+                   <!--  <div class="product-favourite ml-4">
                         <a href="#" class="favme fa fa-heart"></a>
-                    </div>
+                    </div> -->
                 </div>
         </div>
     </section>
