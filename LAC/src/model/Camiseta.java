@@ -18,6 +18,7 @@ public  class Camiseta {
 	private Categoria categoria;
 	private int stock;
 	private String url;
+	private String descripcion;
 	
 	
 	//constructores/////////////////////////////////////////////
@@ -25,7 +26,7 @@ public  class Camiseta {
 		super();
 	}
 	//Camiseta cam1 = new Camiseta(1,Categoria.Manga_corta,15, Talla.L, Genero.HOMBRE, Color.AZUL, "/imagenes1.jpg");
-	public Camiseta(int id, Categoria categoria, float precio, Talla talla, Genero genero, Color color,String url, int stock){
+	public Camiseta(int id, Categoria categoria, float precio, Talla talla, Genero genero, Color color,String url, int stock, String descripcion){
 		super();
 		this.id = id;
 		this.color = color;
@@ -35,6 +36,7 @@ public  class Camiseta {
 		this.categoria = categoria;
 		this.stock = stock;
 		this.url = url;
+		this.descripcion = descripcion;
 	}
 
 	
@@ -87,6 +89,12 @@ public  class Camiseta {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 	
 	
 	//metodos///////////////////////////////////////////////////
@@ -99,6 +107,7 @@ public  class Camiseta {
 		Pantalla.write(getCategoria());
 		Pantalla.write(getStock());
 		Pantalla.write(getUrl());
+		Pantalla.write(getDescripcion());
 	}
 
 }

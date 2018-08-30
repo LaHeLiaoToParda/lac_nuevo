@@ -5,10 +5,9 @@ public enum Color {
 	AZUL,
 	ROJO,
 	VERDE,
-	AMARILLO,
 	NEGRO,
 	NARANJA,
-	BLANCO;
+	ROSA;
 	
 	
 //	private String color;
