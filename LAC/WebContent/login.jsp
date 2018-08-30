@@ -259,6 +259,7 @@
 							Registrate Aqui
 						</a>
 					</div>
+					</form>
 				</form>
 			</div>
 		</div>

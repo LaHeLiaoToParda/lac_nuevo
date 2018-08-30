@@ -36,9 +36,7 @@ public class ControlSesiones extends HttpServlet {
  
         try
         {
- 
-        	   
-			   //name="dni"        name="pass" 			   
+ 	   
 			   String dni = request.getParameter("dni");
 			   String pass = request.getParameter("pass");
 			   RequestDispatcher view = request.getRequestDispatcher("/index.html");

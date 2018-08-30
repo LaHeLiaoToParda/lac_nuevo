@@ -1,7 +1,6 @@
 package data;
 
 import java.util.List;
-
 import model.Camiseta;
 
 public interface ICamisetaDAO {
