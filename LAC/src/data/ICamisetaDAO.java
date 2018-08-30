@@ -13,5 +13,4 @@ public interface ICamisetaDAO {
 	public List<Camiseta> mostrarCamisetasTalla(String talla);
 	public Camiseta mostrarFichaTecnicaCamiseta(int id);
 	public void Alta(Camiseta c);
-    
 }
