@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%> --%>
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,9 +55,9 @@
 									<ul class="single-mega cn-col-4">
 										<li class="title"><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
 				
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Manga Corta</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA CORTA">Manga Corta</a></li>
                                         <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga Larga</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA LARGA">Manga Larga</a></li>
 
 									</ul>
 									<ul class="single-mega cn-col-4">
@@ -265,35 +267,31 @@
 									<div class="single-product-wrapper">
 										<!-- Product Image -->
 										<div class="product-img">
-											<img src="img/product-img/product-1.jpg" alt="">
+											<img src="${mi.url}" alt="">
 											<!-- Hover Thumb -->
-											<img class="hover-img" src="img/product-img/product-2.jpg"
-												alt="">
-
-											<!-- Product Badge -->
+<!-- 											<img class="hover-img" src="img/product-img/product-2.jpg"
+												alt=""> -->
+<!-- 											Product Badge
 											<div class="product-badge offer-badge">
 												<span>-30%</span>
-											</div>
-											<!-- Favourite -->
+											</div> -->
+<!-- 											Favourite
 											<div class="product-favourite">
 												<a href="#" class="favme fa fa-heart"></a>
-											</div>
+											</div> -->
 										</div>
 
 										<!-- Product Description -->
 										<div class="product-description">
-											<span>${mi.categoria}</span> <a
-												href="single-product-details.html">
-												<h6>${mi.color}</h6>
-											</a>
-											<p class="product-price">${mi.precio}</p>
-
+											<%-- <span>${mi.categoria}</span> --%>
+											<p class="product-price">Talla ${mi.talla}  -  ${mi.precio} €</p>
+												<h6><a href="ServletListado?operacion=id&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
 											<div class="hover-content">
 												<!-- Add to Cart -->
-												<div class="add-to-cart-btn">
+<!-- 												<div class="add-to-cart-btn">
 													<a href="#" class="btn essence-btn">Add to Cart</a>
-												</div>
+												</div> -->
 											</div>
 										</div>
 									</div>
