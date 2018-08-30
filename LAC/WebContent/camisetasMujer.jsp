@@ -275,7 +275,7 @@
 											<a href="single-product-details.html">
 											</a>
 											<p class="product-price">${mi.precio}</p>
-											<h6><a href="#" class="btn essence-btn">VER PRODUCTO</a></h6>
+											<h6><a href="" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
 											<div class="hover-content">
 												<!-- Add to Cart -->

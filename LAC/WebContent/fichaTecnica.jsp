@@ -205,7 +205,7 @@
             
                 <div >
                     <span>TALLA: </span>
-                    <span>COLOR: ${Listaa.color}</span>
+                    <span>COLOR: ${Camiseta.color}</span>
                 </div>
                 <!-- Cart & Favourite Box -->
                 <div class="cart-fav-box d-flex align-items-center">
