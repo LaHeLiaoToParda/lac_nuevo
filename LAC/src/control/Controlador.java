@@ -28,7 +28,7 @@ public class Controlador extends HttpServlet {
         try {
  
             String busqueda = request.getParameter("search");// devuelve lo del
-                                                                // buscador
+            request.setAttribute("titulo", busqueda);                                                    // buscador
  
             if (busqueda.equalsIgnoreCase("hombre") || busqueda.equalsIgnoreCase("camisetas de hombre")
                     || busqueda.equalsIgnoreCase("camisetas de chico") || busqueda.equalsIgnoreCase("camiseta chico")
@@ -37,7 +37,7 @@ public class Controlador extends HttpServlet {
             {
                 cam = new CamisetaDAO().mostrarCamisetasGenero("hombre");
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
             } else if (busqueda.equalsIgnoreCase("mujer") || busqueda.equalsIgnoreCase("camisetas de mujer")
                     || busqueda.equalsIgnoreCase("camisetas de chica") || busqueda.equalsIgnoreCase("camiseta chica")
@@ -46,14 +46,14 @@ public class Controlador extends HttpServlet {
             {
                 cam = new CamisetaDAO().mostrarCamisetasGenero("mujer");
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
             } else if (busqueda.equalsIgnoreCase("camisetas") || busqueda.equalsIgnoreCase("camiseta")
                     || busqueda.equalsIgnoreCase("camis"))//
             {
                 cam = new CamisetaDAO().listadoCamisetas();
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
             } else if (busqueda.equalsIgnoreCase("manga corta") || busqueda.equalsIgnoreCase("camisetas corta")
                     || busqueda.equalsIgnoreCase("camiseta corta") || busqueda.equalsIgnoreCase("camiseta manga corta")
@@ -61,7 +61,7 @@ public class Controlador extends HttpServlet {
             {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("MANGA_CORTA");
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
             }
             else if (busqueda.equalsIgnoreCase("manga larga") || busqueda.equalsIgnoreCase("camisetas larga")
@@ -70,7 +70,7 @@ public class Controlador extends HttpServlet {
             {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("MANGA_LARGA");
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("camisetas_Manga_Larga.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
             }
             else if (busqueda.equalsIgnoreCase("sin manga") || busqueda.equalsIgnoreCase("camisetas tirantes")
@@ -79,8 +79,12 @@ public class Controlador extends HttpServlet {
             {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("TIRANTES");
                 request.setAttribute("Lista", cam);
-                RequestDispatcher view = request.getRequestDispatcher("camisetas_Tirantes.jsp");
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
+            }else
+            {
+            	RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+            	view.forward(request, response);
             }
  
         } catch (Exception e) {
