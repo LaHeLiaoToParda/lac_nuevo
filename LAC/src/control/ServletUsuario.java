@@ -38,64 +38,64 @@ public class ServletUsuario extends HttpServlet {
 
 			String operacion = request.getParameter("operacion");
 			String genero;
-			if (operacion.equalsIgnoreCase("genero")) {
-				genero = request.getParameter("genero");
-				
-				if (genero.equalsIgnoreCase("HOMBRE")) {
-					String categoria = request.getParameter("categoria");
-					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
-					request.setAttribute("Lista", cam);
-					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("SOLO")) {
-						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
-						request.setAttribute("Lista", cam);
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					}
-				} else if (genero.equalsIgnoreCase("MUJER")) {
-					String categoria = request.getParameter("categoria");
-					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
-					request.setAttribute("Lista", cam);
-					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("SOLO")) {
-						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
-						request.setAttribute("Lista", cam);
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					}
-				}
-			} else if (operacion.equalsIgnoreCase("listado")) {
-				cam = new CamisetaDAO().listadoCamisetas();
-				request.setAttribute("Lista", cam);
-				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
-				view.forward(request, response);
-				
-			} else if(operacion.equalsIgnoreCase("id")){
-				Camiseta camiseta = new Camiseta();
-				String id = request.getParameter("id");
-				int idCamiseta= Integer.parseInt(id);
-				
-				camiseta = new CamisetaService().mostrarFichaTecnicaCamiseta(idCamiseta);
-				request.setAttribute("Camiseta", camiseta);
-				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
-				view.forward(request, response);
-			}
+//			if (operacion.equalsIgnoreCase("genero")) {
+//				genero = request.getParameter("genero");
+//				
+//				if (genero.equalsIgnoreCase("HOMBRE")) {
+//					String categoria = request.getParameter("categoria");
+//					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
+//					request.setAttribute("Lista", cam);
+//					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("SOLO")) {
+//						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
+//						request.setAttribute("Lista", cam);
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					}
+//				} else if (genero.equalsIgnoreCase("MUJER")) {
+//					String categoria = request.getParameter("categoria");
+//					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
+//					request.setAttribute("Lista", cam);
+//					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("SOLO")) {
+//						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
+//						request.setAttribute("Lista", cam);
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					}
+//				}
+//			} else if (operacion.equalsIgnoreCase("listado")) {
+//				cam = new CamisetaDAO().listadoCamisetas();
+//				request.setAttribute("Lista", cam);
+//				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
+//				view.forward(request, response);
+//				
+//			} else if(operacion.equalsIgnoreCase("id")){
+//				Camiseta camiseta = new Camiseta();
+//				String id = request.getParameter("id");
+//				int idCamiseta= Integer.parseInt(id);
+//				
+//				camiseta = new CamisetaService().mostrarFichaTecnicaCamiseta(idCamiseta);
+//				request.setAttribute("Camiseta", camiseta);
+//				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
+//				view.forward(request, response);
+//			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
