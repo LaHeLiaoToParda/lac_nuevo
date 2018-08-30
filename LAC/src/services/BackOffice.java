@@ -11,6 +11,10 @@ public class BackOffice implements IBackOffice {
 	public void altaUsuario(Usuario u) {
 		backOfficeDAO.altaUsuario(u);
 	}
+	
+	public void bajaUsuario(Usuario u) {
+		backOfficeDAO.bajaUsuario(u);
+	}
 
 	public void altaCamiseta(Camiseta c) {
 		backOfficeDAO.altaCamiseta(c);

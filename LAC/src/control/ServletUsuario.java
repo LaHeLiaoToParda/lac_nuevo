@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import data.BackOfficeDAO;
 import data.CamisetaDAO;
 import model.Camiseta;
 import model.Usuario;
@@ -32,12 +33,26 @@ public class ServletUsuario extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		List<Usuario> usu;
+		List<Usuario> usuarios;
+		Usuario u = new Usuario();
 
 		try {
-
 			String operacion = request.getParameter("operacion");
+			
+			if(operacion.equalsIgnoreCase("alta")) {
+				
+			} else if(operacion.equalsIgnoreCase("baja")) {
+				
+			}
 			String genero;
+			u.setDni(request.getParameter("dni"));
+			u.setDni(request.getParameter("nombre"));
+			u.setDni(request.getParameter("apellidos"));
+			u.setDni(request.getParameter("contrasena"));
+			u.setDni(request.getParameter("direccion"));
+			
+			new BackOfficeDAO().altaUsuario(u);
+			new BackOfficeDAO().bajaUsuario(u);
 //			if (operacion.equalsIgnoreCase("genero")) {
 //				genero = request.getParameter("genero");
 //				

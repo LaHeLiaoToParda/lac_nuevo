@@ -37,6 +37,22 @@ public class BackOfficeDAO implements IBackOfficeDAO {
             Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 	}
+	
+	//elimina un usuario de la bbdd segun el dni
+	public void bajaUsuario(Usuario u) {
+		Statement st = null;
+        try {
+            ConexionDB con = new ConexionDB();
+            st = con.getConnection().createStatement();
+            String q = "DELETE FROM `lac`.`usuarios` WHERE dni ='" + u.getDni() + "';";
+            Pantalla.write(q);
+            st.executeQuery(q);
+            con.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+		
+	}
 
 	//añade una nueva camiseta a la bbdd
 	public void altaCamiseta(Camiseta c) {
