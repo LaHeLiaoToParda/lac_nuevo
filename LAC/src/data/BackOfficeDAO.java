@@ -70,19 +70,20 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 	}
 	
 	//elimina una camiseta de la bbdd segun el id
-	public void bajaCamiseta(Camiseta c) {
-		Statement st = null;
-        try {
-            ConexionDB con = new ConexionDB();
-            st = con.getConnection().createStatement();
-            String q = "DELETE FROM `lac`.`camisetas` WHERE id ='" + c.getId() + "';";
-            Pantalla.write(q);
-            st.executeQuery(q);
-            con.getConnection().close();
-        } catch (SQLException ex) {
-            Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-		
-	}
+//	para el 3er sprint
+//	public void bajaCamiseta(Camiseta c) {
+//		Statement st = null;
+//        try {
+//            ConexionDB con = new ConexionDB();
+//            st = con.getConnection().createStatement();
+//            String q = "DELETE FROM `lac`.`camisetas` WHERE id ='" + c.getId() + "';";
+//            Pantalla.write(q);
+//            st.executeQuery(q);
+//            con.getConnection().close();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//		
+//	}
 
 }

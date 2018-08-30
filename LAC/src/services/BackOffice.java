@@ -20,8 +20,9 @@ public class BackOffice implements IBackOffice {
 	public void altaCamiseta(Camiseta c) {
 		backOfficeDAO.altaCamiseta(c);
 	}
-
-	public void bajaCamiseta(Camiseta c) {
-		backOfficeDAO.bajaCamiseta(c);
-	}
+	
+// 3er Sprint
+//	public void bajaCamiseta(Camiseta c) {
+//		backOfficeDAO.bajaCamiseta(c);
+//	}
 }

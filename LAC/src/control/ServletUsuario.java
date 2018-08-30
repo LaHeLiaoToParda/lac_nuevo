@@ -7,12 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import data.BackOfficeDAO;
-import data.CamisetaDAO;
-import model.Camiseta;
 import model.Usuario;
-import services.CamisetaService;
 
 /**
  * Servlet implementation class ServletUsuario
