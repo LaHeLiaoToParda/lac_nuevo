@@ -2,19 +2,21 @@ package services;
 
 import data.BackOfficeDAO;
 import data.IBackOfficeDAO;
+import model.Camiseta;
+import model.Usuario;
 
 public class BackOffice implements IBackOffice {
 	private IBackOfficeDAO backOfficeDAO = new BackOfficeDAO();
 
-	public void altaUsuario() {
-		backOfficeDAO.altaUsuario();
+	public void altaUsuario(Usuario u) {
+		backOfficeDAO.altaUsuario(u);
 	}
 
-	public void altaCamiseta() {
-		backOfficeDAO.altaCamiseta();
+	public void altaCamiseta(Camiseta c) {
+		backOfficeDAO.altaCamiseta(c);
 	}
 
-	public void bajaCamiseta() {
-		backOfficeDAO.bajaCamiseta();
+	public void bajaCamiseta(Camiseta c) {
+		backOfficeDAO.bajaCamiseta(c);
 	}
 }

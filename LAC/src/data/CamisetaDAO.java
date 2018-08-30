@@ -15,6 +15,7 @@ import model.Categoria;
 import model.Color;
 import model.Genero;
 import model.Talla;
+import utilities.Pantalla;
 
 
 public class CamisetaDAO implements ICamisetaDAO {
@@ -216,8 +217,8 @@ public class CamisetaDAO implements ICamisetaDAO {
             st = con.getConnection().createStatement();
             //Camiseta(int id, Categoria categoria, float precio, Talla talla, Genero genero, Color color,String url, int stock){
             String q = "INSERT INTO `camisetas` VALUES ('" + c.getId() + "','"+ c.getCategoria() +"','" + c.getPrecio() + c.getPrecio() + "','" + c.getGenero() + "','" + c.getTalla() + "','" + c.getCategoria() + "','" + c.getStock() +"','" + c.getUrl() + "','" + c.getDescripcion()+ "')";
-            System.out.println(q);
-            int i = st.executeUpdate(q);
+            Pantalla.write(q);
+            st.executeUpdate(q);
             con.getConnection().close();
 
         } catch (SQLException ex) {
