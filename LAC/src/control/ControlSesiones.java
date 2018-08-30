@@ -16,7 +16,7 @@ import model.Camiseta;
 /**
  * Servlet implementation class controlSesiones
  */
-@WebServlet("/controlSesiones")
+@WebServlet("/ControlSesiones")
 public class ControlSesiones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
