@@ -100,6 +100,12 @@ public class ServletListado extends HttpServlet {
 				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
 				view.forward(request, response);
 			}
+			else if(operacion.equalsIgnoreCase("login"))
+            {
+         	   RequestDispatcher view = request.getRequestDispatcher("/login.jsp");
+ 			   view.forward(request, response);
+ 			   
+            }
 
 		} catch (Exception e) {
 			e.printStackTrace();

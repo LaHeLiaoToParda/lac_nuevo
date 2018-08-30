@@ -37,9 +37,12 @@ public class ControlSesiones extends HttpServlet {
         try
         {
  
-        	
-           String operacion = request.getParameter("operacion");// devuelve lo del
-            //request.setAttribute("titulo", busqueda);                                                    // buscador
+        	   
+			   //name="dni"        name="pass" 			   
+			   String dni = request.getParameter("dni");
+			   String pass = request.getParameter("pass");
+			   RequestDispatcher view = request.getRequestDispatcher("/index.html");
+			   view.forward(request, response);
            
             
  
@@ -52,7 +55,7 @@ public class ControlSesiones extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request,response);
 	}
 
 	/**
@@ -60,7 +63,7 @@ public class ControlSesiones extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		processRequest(request,response);
 	}
 
 }
