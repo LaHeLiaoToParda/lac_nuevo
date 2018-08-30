@@ -17,13 +17,13 @@ import model.Camiseta;
  * Servlet implementation class controlSesiones
  */
 @WebServlet("/ControlSesiones")
-public class ControlSesiones extends HttpServlet {
+public class ControlLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ControlSesiones()
+    public ControlLogin()
     {
         super();
         // TODO Auto-generated constructor stub
