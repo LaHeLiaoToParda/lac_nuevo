@@ -1,17 +1,12 @@
 package data;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import model.Camiseta;
-import model.Categoria;
-import model.Color;
-import model.Genero;
-import model.Talla;
 import model.Usuario;
 import utilities.Pantalla;
 
@@ -21,7 +16,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
     public Connection con = null;
 
     // package level access
-    public CamisetaDAO() {
+    public BackOfficeDAO() {
     	con = new ConexionDB().getConnection();
     }
 
