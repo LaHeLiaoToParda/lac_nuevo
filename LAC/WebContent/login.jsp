@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Essence - Fashion Ecommerce Template</title>
+    <title>La Casa de las Camisetas</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -23,74 +23,53 @@
 <body>
     <!-- ##### Header Area Start ##### -->
     <header class="header_area">
-        <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
-            <!-- Classy Menu -->
-            <nav class="classy-navbar" id="essenceNav">
-                <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img src="img/core-img/logo.png" alt=""></a>
-                <!-- Navbar Toggler -->
-                <div class="classy-navbar-toggler">
-                    <span class="navbarToggler"><span></span><span></span><span></span></span>
-                </div>
-                <!-- Menu -->
-                <div class="classy-menu">
-                    <!-- close btn -->
-                    <div class="classycloseIcon">
-                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                    </div>
-                    <!-- Nav Start -->
-                    <div class="classynav">
-                        <ul>
-                            <li><a href="#">Shop</a>
-                                <div class="megamenu">
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Women's Collection</li>
-                                        <li><a href="shop.html">Dresses</a></li>
-                                        <li><a href="shop.html">Blouses &amp; Shirts</a></li>
-                                        <li><a href="shop.html">T-shirts</a></li>
-                                        <li><a href="shop.html">Rompers</a></li>
-                                        <li><a href="shop.html">Bras &amp; Panties</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Men's Collection</li>
-                                        <li><a href="shop.html">T-Shirts</a></li>
-                                        <li><a href="shop.html">Polo</a></li>
-                                        <li><a href="shop.html">Shirts</a></li>
-                                        <li><a href="shop.html">Jackets</a></li>
-                                        <li><a href="shop.html">Trench</a></li>
-                                    </ul>
-                                    <ul class="single-mega cn-col-4">
-                                        <li class="title">Kid's Collection</li>
-                                        <li><a href="shop.html">Dresses</a></li>
-                                        <li><a href="shop.html">Shirts</a></li>
-                                        <li><a href="shop.html">T-shirts</a></li>
-                                        <li><a href="shop.html">Jackets</a></li>
-                                        <li><a href="shop.html">Trench</a></li>
-                                    </ul>
-                                    <div class="single-mega cn-col-4">
-                                        <img src="img/bg-img/bg-6.jpg" alt="">
-                                    </div>
-                                </div>
-                            </li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="single-product-details.html">Product Details</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="single-blog.html">Single Blog</a></li>
-                                    <li><a href="regular-page.html">Regular Page</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                    <!-- Nav End -->
-                </div>
-            </nav>
+		<div
+			class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+			<!-- Classy Menu -->
+			<nav class="classy-navbar" id="essenceNav">
+				<!-- Logo -->
+				<a class="nav-brand" href="index.html">INICIO</a>
+				<!-- Navbar Toggler -->
+				<div class="classy-navbar-toggler">
+					<span class="navbarToggler"><span></span><span></span><span></span></span>
+				</div>
+				<!-- Menu -->
+				<div class="classy-menu">
+					<!-- close btn -->
+					<div class="classycloseIcon">
+						<div class="cross-wrap">
+							<span class="top"></span><span class="bottom"></span>
+						</div>
+					</div>
+					<!-- Nav Start -->
+					<div class="classynav">
+						<ul>
+							<li><a href="#">Categoria</a>
+								<div class="megamenu">
+									<ul class="single-mega cn-col-4">
+										<li class="title"><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
+				
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Manga Corta</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga Larga</a></li>
+
+									</ul>
+									<ul class="single-mega cn-col-4">
+										 <li class="title"><a  href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
+                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga Corta</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Manga Larga</a></li>
+									</ul>
+
+									<div class="single-mega cn-col-4">
+										<img src="img/bg-img/bg-6.jpg" alt="">
+									</div>
+								</div>
+						</ul>
+					</div>
+					<!-- Nav End -->
+				</div>
+			</nav>
 
             <!-- Header Meta Data -->
             <div class="header-meta d-flex clearfix justify-content-end">
