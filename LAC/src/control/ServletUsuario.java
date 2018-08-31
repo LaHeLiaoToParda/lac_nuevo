@@ -32,14 +32,13 @@ public class ServletUsuario extends HttpServlet {
 		try {
 			String operacion = request.getParameter("operacion");
 			
-			if(operacion.equalsIgnoreCase("alta"))
-			{
+			if(operacion.equalsIgnoreCase("alta")){
 				//CAMBIAR LOS SETTERS
-				u.setDni(request.getParameter("dni"));
-				u.setDni(request.getParameter("nombre"));
-				u.setDni(request.getParameter("apellidos"));
-				u.setDni(request.getParameter("contrasena"));
-				u.setDni(request.getParameter("direccion"));
+				u.setNick(request.getParameter("nick"));
+				u.setNombre(request.getParameter("nombre"));
+				u.setApellidos(request.getParameter("apellidos"));
+				u.setContrasena(request.getParameter("contrasena"));
+				u.setDireccion(request.getParameter("direccion"));
 				
 				new BackOfficeDAO().altaUsuario(u);
 				
