@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,27 +21,6 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="css/core-style.css">
     <link rel="stylesheet" href="style.css">
-    
-    <link rel="icon" type="image/png" href="images2/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts2/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts2/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css2/util.css">
-	<link rel="stylesheet" type="text/css" href="css2/main.css">
 
 </head>
 
@@ -83,7 +66,7 @@
 									</ul>
 
 									<div class="single-mega cn-col-4">
-										<img src="img/bg-img/bg-6.jpg" alt="">
+										<img src="img/camisetas/patopeque.jpg" alt="">
 									</div>
 								</div>
 						</ul>
@@ -92,33 +75,39 @@
 				</div>
 			</nav>
 
-            <!-- Header Meta Data -->
-            <div class="header-meta d-flex clearfix justify-content-end">
-                <!-- Search Area -->
-                <div class="search-area">
-                    <form action="#" method="post">
-                        <input type="search" name="search" id="headerSearch" placeholder="Type for search">
-                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </form>
-                </div>
-                <!-- Favourite Area -->
-                <div class="favourite-area">
-                    <a href="#"><img src="img/core-img/heart.svg" alt=""></a>
-                </div>
-                <!-- User Login Info -->
-                <div class="user-login-info">
-                    <a href="#"><img src="img/core-img/user.svg" alt=""></a>
-                </div>
-                <!-- Cart Area -->
-                <div class="cart-area">
-                    <a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""> <span>3</span></a>
-                </div>
-            </div>
+			<!-- Header Meta Data -->
+			<div class="header-meta d-flex clearfix justify-content-end">
+				<!-- Search Area -->
+				<div class="search-area">
+					<form action="Controlador" method="POST">
+						<input type="search" name="search" id="headerSearch"
+							placeholder="Type for search">
+						<button type="submit">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</button>
+					</form>
+				</div>
+				
+				<!-- Favourite Area -->
+				<div class="favourite-area">
+					<a href="#"><p>Bienvenido: ${sessionScope.usuario}</p></a>
+				</div>
+				
+				<!-- User Login Info -->
+				<div class="user-login-info">
+					<a href="login.jsp"><img src="img/core-img/user.svg" alt=""></a>
+				</div>
+				<!-- Cart Area -->
+				<!--<div class="cart-area">
+					<a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg"
+						alt=""> <span>3</span></a>
+				</div>-->
+			</div>
 
-        </div>
-    </header>
+		</div>
+	</header>
     <!-- ##### Header Area End ##### -->
-
+    
     <!-- ##### Right Side Cart Area ##### -->
     <div class="cart-bg-overlay"></div>
 
@@ -200,94 +189,61 @@
     </div>
     <!-- ##### Right Side Cart End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb_area bg-img" style="background-image: url(img/bg-img/breadcumb.jpg);">
+    
+
+    <!-- ##### Welcome Area Start ##### -->
+    <section class="welcome_area bg-img background-overlay" style="background-image: url(img/bg-img/bg-1.jpg);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
-                    <div class="page-title text-center">
-                        <h2>LOGIN</h2>
+                    <div class="hero-content">
+                        <h2>PATO</h2>
+
+                        <a href="ServletListado?operacion=listado" class="btn essence-btn">Acceder a la Tienda</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ##### Breadcumb Area End ##### -->
+    </section>
+    <!-- ##### Welcome Area End ##### -->
 
-    <!-- ##### Checkout Area Start ##### -->
-    
-    <div class="limiter">
-    
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form action="ControlLogin" method="POST" class="login100-form validate-form">
-					<span class="login100-form-title p-b-26">
-						LOGIN
-					</span>
-					<span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
-					
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="nick">
-						<span class="focus-input100" data-placeholder="NICK"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
-							</button>
-						</div>
-					</div>
-
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							No tienes cuenta?
-						</span>
-
-						<a class="txt2" href="formulario.jsp">
-							Registrate Aqui
-						</a>
-					</div>
-					
-				</form>
-			</div>
-		</div>
-	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="js2/main.js"></script>
+    <!-- ##### Top Catagory Area Start ##### -->
     
     
-    <!-- ##### Checkout Area End ##### -->
+    <!-- <div class="top_catagory_area section-padding-80 clearfix">
+        <div class="container">
+            <div class="row justify-content-center">
+                Single Catagory
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/img-camisetas/corta.jpg);">
+                        <div class="catagory-content">
+                            <a href="shop.html">Manga Corta</a>
+                        </div>
+                    </div>
+                </div>
+                Single Catagory
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/img-camisetas/tirantes.jpg);">
+                        <div class="catagory-content">
+                            <a href="shop.html">Tirantes</a>
+                        </div>
+                    </div>
+                </div>
+                Single Catagory
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="single_catagory_area d-flex align-items-center justify-content-center bg-img" style="background-image: url(img/img-camisetas/larga.jpg);">
+                        <div class="catagory-content">
+                            <a href="shop.html">Manga Larga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+    <!-- ##### Top Catagory Area End ##### -->
 
+    
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer_area clearfix">
         <div class="container">
@@ -297,48 +253,18 @@
                     <div class="single_widget_area d-flex mb-30">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="#"></a>
                         </div>
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="shop.html">Shop</a></li>
-                                <li><a href="blog.html">Blog</a></li>
+                   
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area mb-30">
-                        <ul class="footer_widget_menu">
-                            <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Payment Options</a></li>
-                            <li><a href="#">Shipping and Delivery</a></li>
-                            <li><a href="#">Guides</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row align-items-end">
-                <!-- Single Widget Area -->
-                <div class="col-12 col-md-6">
-                    <div class="single_widget_area">
-                        <div class="footer_heading mb-30">
-                            <h6>Subscribe</h6>
-                        </div>
-                        <div class="subscribtion_form">
-                            <form action="#" method="post">
-                                <input type="email" name="mail" class="mail" placeholder="Your email here">
-                                <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Single Widget Area -->
                 <div class="col-12 col-md-6">
                     <div class="single_widget_area">
@@ -355,17 +281,11 @@
 
 <div class="row mt-5">
                 <div class="col-md-12 text-center">
-                    <p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </p>
+                    
                 </div>
             </div>
-            
+
         </div>
-
-
     </footer>
     <!-- ##### Footer Area End ##### -->
 

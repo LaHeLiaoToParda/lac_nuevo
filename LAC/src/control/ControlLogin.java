@@ -9,9 +9,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import data.BackOfficeDAO;
 import data.CamisetaDAO;
+import data.IBackOfficeDAO;
 import model.Camiseta;
+import model.Usuario;
 
 /**
  * Servlet implementation class controlSesiones
@@ -33,17 +37,50 @@ public class ControlLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         List<Camiseta> cam;
- 
+        Usuario m= new Usuario();
+        Usuario u= new Usuario();
+    	
         try
         {
- 	   
-			   String dni = request.getParameter("dni");
-			   String pass = request.getParameter("pass");
-			   RequestDispatcher view = request.getRequestDispatcher("/index.html");
-			   view.forward(request, response);
-           
-            
- 
+        	boolean validado = false;
+        	String nick = request.getParameter("nick");
+    		String pass = request.getParameter("pass");
+			validado = new BackOfficeDAO().validarUsuario(nick,pass);
+        	
+        		if(validado==true){
+        			HttpSession session = request.getSession();
+    				
+    				
+    				
+    				
+//    				m.setNick((String) session.getAttribute("nick"));
+//    				m.setNombre((String) session.getAttribute("nombre"));
+    				//colocar variables en la sesión
+    				session.setAttribute("usuario", nick);
+    				
+     			   RequestDispatcher view = request.getRequestDispatcher("/index.jsp");
+     			   view.forward(request, response);
+        		}else{
+        			response.sendRedirect("login.jsp");
+        			
+        			
+        		}
+			   
+//        		//deberíamos buscar el usuario en la base de datos, pero dado que se escapa de este tema, ponemos un ejemplo en el mismo código
+//                if(usu.equals("admin") && pass.equals("admin") && sesion.getAttribute("usuario") == null){
+//                    //si coincide usuario y password y además no hay sesión iniciada
+//                    sesion.setAttribute("usuario", usu);
+//                    //redirijo a página con información de login exitoso
+//                    response.sendRedirect("loginExito.jsp");
+//                }else{
+//                    //lógica para login inválido
+//                }
+//            }
+			   
+			   
+			   
+			   
+				
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,6 +91,7 @@ public class ControlLogin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		processRequest(request,response);
+		
 	}
 
 	/**
@@ -63,5 +101,5 @@ public class ControlLogin extends HttpServlet {
 		// TODO Auto-generated method stub
 		processRequest(request,response);
 	}
-
+	
 }
