@@ -20,13 +20,16 @@ import model.Camiseta;
  * Servlet implementation class Controlador
  */
 
+/**
+ * Reciba el argumento de la barra de busqueda y segun su contenido muestra lo que busques.
+ */
 
+@WebServlet("/ServletBarraBusqueda")
 /**
  * 
  * el WebServlet es el nombre del servlet para llamarlo desde un jsp o hmtl y que te redirija aqui
  *
  */
-@WebServlet("/ServletBarraBusqueda")
 public class ServletBarraBusqueda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

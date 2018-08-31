@@ -22,13 +22,16 @@ import services.CamisetaService;
 /**
  * Servlet implementation class ServletListado
  */
+/**
+ * Maneja las peticiones de usuario de que categoria o genero quiere elegir para ver camisetas
+ */
 
+@WebServlet("/ServletListado")
 /**
  * 
  * redireccion hacia el servlet, en los jsp para referirse a este servlet deben poner esta ruta
  *
  */
-@WebServlet("/ServletListado")
 public class ServletListado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
