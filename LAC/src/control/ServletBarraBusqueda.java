@@ -1,5 +1,8 @@
 package control;
 
+/**
+ * @author admin
+ */
 import java.io.IOException;
 import java.util.List;
 
@@ -16,18 +19,43 @@ import model.Camiseta;
 /**
  * Servlet implementation class Controlador
  */
-@WebServlet("/Controlador")
-public class Controlador extends HttpServlet {
+
+
+/**
+ * 
+ * el WebServlet es el nombre del servlet para llamarlo desde un jsp o hmtl y que te redirija aqui
+ *
+ */
+@WebServlet("/ServletBarraBusqueda")
+public class ServletBarraBusqueda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Metodo que ejecuta el servlet, en el esta contenido todo el cuerpo del servlet, se ejecuta en el doGet y doPost
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        /**
+         * Coleccion tipo Lista para recoger los datos de la base de datos segun el metodo que llamemos de la interfaz CamisetaDAO
+         */
         List<Camiseta> cam;
  
         try {
  
+        	/**
+        	 * request.getParameter("elemento") --> metodo para recoger elementos del jsp o html
+        	 */
             String busqueda = request.getParameter("search");// devuelve lo del
+            /**
+             * request.setAttribute("elem",elem)--> para introducirle elementos al jsp o html que despues redirija y usarlos en los jsp.
+             * En este caso le  pasamos el titulo que le vamos a pintar en el jsp, depen
+             * 
+             */
             request.setAttribute("titulo", busqueda);                                                    // buscador
  
             if (busqueda.equalsIgnoreCase("hombre") || busqueda.equalsIgnoreCase("camisetas de hombre")

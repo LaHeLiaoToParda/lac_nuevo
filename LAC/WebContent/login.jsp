@@ -96,23 +96,25 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
+                    <form action="ServletBarraBusqueda" method="POST">
                         <input type="search" name="search" id="headerSearch" placeholder="Type for search">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
-                <!-- Favourite Area -->
+                <!-- Favourite Area
                 <div class="favourite-area">
                     <a href="#"><img src="img/core-img/heart.svg" alt=""></a>
                 </div>
+                -->
                 <!-- User Login Info -->
                 <div class="user-login-info">
                     <a href="#"><img src="img/core-img/user.svg" alt=""></a>
                 </div>
-                <!-- Cart Area -->
+                <!-- Cart Area 
                 <div class="cart-area">
                     <a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""> <span>3</span></a>
                 </div>
+                -->
             </div>
 
         </div>
