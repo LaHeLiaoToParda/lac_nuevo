@@ -91,7 +91,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			
 			rs = st.executeQuery(q);
 
-			c.setId(rs.getInt("id"));
+//			c.setId(rs.getInt("id"));
 			c.setColor(Color.valueOf(rs.getString("color")));
 			c.setPrecio((rs.getFloat("precio")));
 			c.setGenero(Genero.valueOf(rs.getString("genero")));

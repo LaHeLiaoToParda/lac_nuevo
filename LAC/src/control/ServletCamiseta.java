@@ -70,9 +70,11 @@ public class ServletCamiseta extends HttpServlet {
 			}else if(operacion.equalsIgnoreCase("consulta"))
 			{
 				
-				int id = Integer.parseInt(request.getParameter("id"));
+				int id = Integer.valueOf(request.getParameter("id"));
+				Camiseta cam = new Camiseta();
+				cam = new BackOfficeDAO().consultarCamiseta(id);
+				request.setAttribute("Camiseta", cam);
 				
-				new BackOfficeDAO().consultarCamiseta(id);
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
 				

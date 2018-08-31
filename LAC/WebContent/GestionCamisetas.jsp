@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -349,14 +349,32 @@
 								<button>Consulta</button>
                                                              
                               </form>
+                         <!-- Espacio para la consulta de camisetas -->
+                         
+        					<div class="single_product_desc clearfix">
+  
+                        		<div >
+                        			<samp>${Camiseta.categoria}</samp>
+                					<span>${Camiseta.genero}</span>
+                    				<span><b>TALLA:</b> ${Camiseta.talla}</span>
+                    				<span><b>COLOR:</b> ${Camiseta.color}</span>
+                   					<span><b>STOCK:</b> ${Camiseta.stock}</span>
+                   					<span><b>${Camiseta.precio}€</b></span>
+                   					<span><b>Descripción:</b> ${Camiseta.descripcion}</span>
+                   					
+                				</div>
+                <p class="product-price">${Camiseta.precio}€</p>
+   
+                <div class="cart-fav-box d-flex align-items-center">
+          
+                </div>
+        </div>
                               </div>
                               </div>
                               </div>
                               </div>
                               </div>
-                              
-                              
-                              </div>
+                       </div>
                               
                             
                         
@@ -382,7 +400,7 @@
 													<input class="input100" type="text" name="stock">
 													<li><a href="#">Imagen</a></li>
 													<input class="input100" type="text" name="url">
-													<li><a href="#">Descripci�n</a></li>
+													<li><a href="#">Descripción</a></li>
 													<input class="input100" type="text" name="descripcion">
 
 												</ul>
@@ -420,7 +438,7 @@
 													<input class="input100" type="text" name="stock">
 													<li><a href="#">Imagen</a></li>
 													<input class="input100" type="text" name="url">
-													<li><a href="#">Descripci�n</a></li>
+													<li><a href="#">Descripción</a></li>
 													<input class="input100" type="text" name="descripcion">
 
 												</ul></li>
