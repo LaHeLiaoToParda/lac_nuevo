@@ -80,7 +80,7 @@
 			<div class="header-meta d-flex clearfix justify-content-end">
 				<!-- Search Area -->
 				<div class="search-area">
-					<form action="Controlador" method="POST">
+					<form action="ServletBarraBusqueda" method="POST">
 						<input type="search" name="search" id="headerSearch"
 							placeholder="Type for search">
 						<button type="submit">

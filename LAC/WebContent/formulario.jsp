@@ -79,7 +79,7 @@
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form action="#" method="post">
+                    <form action="ServletBarraBusqueda" method="POST">
                         <input type="search" name="search" id="headerSearch" placeholder="Type for search">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
@@ -215,11 +215,11 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre">Nombre <span>*</span></label>
-                                    <input type="text" class="form-control" id="first_name" value="" name="nombre" required>
+                                    <input type="text" class="form-control" id="first_name" value="${usuario.nombre}" name="nombre" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="apellidos">Apellidos <span>*</span></label>
-                                    <input type="text" class="form-control" id="last_name" value="" name="apellidos" required>
+                                    <input type="text" class="form-control" id="last_name" value="${usuario.apellidos}" name="apellidos" required>
                                 </div>
                                 <!-- <div class="col-12 mb-3">
                                     <label for="DNI">DNI <span>*</span></label>
@@ -232,7 +232,7 @@
                                 
                                 <div class="col-12 mb-3">
                                     <label for="Direccion">Dirección <span>*</span></label>
-                                    <input type="text" class="form-control mb-3" id="street_address" value="" name="direccion">
+                                    <input type="text" class="form-control mb-3" id="street_address" value="${usuario.direccion}" name="direccion">
                                    
                                 </div>
                                 <!-- <div class="col-12 mb-3">
@@ -275,8 +275,8 @@
                                 <div class="cart-page-heading">
                             		<h5>Crea el usuario y contraseña</h5>
                         		</div>
-                                    <label for="usuario">Nombre de Usuario <span>*</span></label>
-                                    <input type="text" class="form-control" id="postcode" value="" name="nick">
+                                    <label for="usuario">Nick <span>*</span></label>
+                                    <input type="text" class="form-control" id="postcode" value="${usuario.nick}" name="nick">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="contraseña">Contraseña <span>*</span></label>

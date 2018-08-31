@@ -23,35 +23,48 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 	// añade un nuevo usuario a la bbdd
 	public void altaUsuario(Usuario u) {
 		Statement st = null;
-
 		try {
 			ConexionDB con = new ConexionDB();
 			st = con.getConnection().createStatement();
-			String q = "INSERT INTO `lac`.`usuarios` (`dni`, `nombre`, `apellidos`, `rol`, `contrasena`, `direccion`)"
-					+ "VALUES (`" + u.getDni() + "`, `" + u.getNombre() + "`, `" + u.getApellidos() + "`, `"
-					+ u.getRol() + "`, `" + u.getContrasena() + "`, `" + u.getDni() + "`);";
+			
+			String q = "INSERT INTO `lac`.`usuarios` (nick, nombre, apellidos, contrasena, direccion)"
+						+ " VALUES ('" + u.getNick() + "', '" + u.getNombre() + "', '" + u.getApellidos() + "', '"
+						+ u.getContrasena() + "', '" + u.getDireccion() + "');";
 			Pantalla.write(q);
-			st.executeQuery(q);
+			st.executeUpdate(q);
 			con.getConnection().close();
 		} catch (SQLException ex) {
 			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
-	public boolean comprobarUsuarios(String usuario, String contrasena) throws SQLException {
+	public boolean comprobarUsuario(String nick) throws SQLException {
 		Statement st = null;
 		ConexionDB con = new ConexionDB();
 		st = con.getConnection().createStatement();
 
-		String q = "SELECT nick, contrasena FROM usuarios WHERE nick ='" + usuario + "' AND contrasena='" + contrasena
+		String q = "SELECT * FROM `lac`.`usuarios` WHERE nick ='" + nick + "'";
+		st.executeQuery(q);
+
+		if (st.getResultSet() == null) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
+	public boolean validarUsuario(String nick, String contrasena) throws SQLException {
+		Statement st = null;
+		ConexionDB con = new ConexionDB();
+		st = con.getConnection().createStatement();
+
+		String q = "SELECT nick, contrasena FROM usuarios WHERE nick ='" + nick + "' AND contrasena='" + contrasena
 				+ "'";
 		st.executeQuery(q);
 
 		if (st.getResultSet() != null) {
-
 			return true;
 		} else {
-
 			return false;
 		}
 	}
@@ -84,7 +97,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 					+ c.getPrecio() + "','" + c.getGenero() + "','" + c.getTalla() + "','" + c.getCategoria() + "','"
 					+ c.getStock() + "','" + c.getUrl() + "','" + c.getDescripcion() + "')";
 			Pantalla.write(q);
-			st.executeQuery(q);
+			st.executeUpdate(q);
 			con.getConnection().close();
 		} catch (SQLException ex) {
 			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
