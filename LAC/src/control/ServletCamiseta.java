@@ -35,11 +35,11 @@ public class ServletCamiseta extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		Camiseta c = new Camiseta();
 
-//		try {
-//			String operacion = request.getParameter("operacion");
-//			
-//			if(operacion.equalsIgnoreCase("alta")) 
-//			{
+		try {
+			String operacion = request.getParameter("operacion");
+			
+			if(operacion.equalsIgnoreCase("alta")) 
+			{
 				c.setColor(Color.valueOf(request.getParameter("color")));
 				c.setPrecio(Float.parseFloat(request.getParameter("precio")));
 				c.setGenero(Genero.valueOf(request.getParameter("genero")));
@@ -50,32 +50,36 @@ public class ServletCamiseta extends HttpServlet {
 				c.setDescripcion(request.getParameter("descripcion"));
 				
 				new BackOfficeDAO().altaCamiseta(c);
-				
-//			} else if(operacion.equalsIgnoreCase("baja")) 
-//			{
-//				
-//				int id = Integer.parseInt(request.getParameter("id"));
-//				
-//				new BackOfficeDAO().bajaCamiseta(id);
-				RequestDispatcher view = request.getRequestDispatcher("/index.html");
+				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
-//		
-//			} else if(operacion.equalsIgnoreCase("modificar")) 
-//			{
-//				
-//			}else if(operacion.equalsIgnoreCase("consulta"))
-//			{
-//				
-//				int id = Integer.parseInt(request.getParameter("id"));
-//				
-//				new BackOfficeDAO().consultarCamiseta(id);
-//				RequestDispatcher view = request.getRequestDispatcher("/index.html");
-//				view.forward(request, response);
-//				
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
+				
+			} else if(operacion.equalsIgnoreCase("baja")) 
+			{
+				
+				int id = Integer.parseInt(request.getParameter("id"));
+				
+				new BackOfficeDAO().bajaCamiseta(id);
+				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
+				view.forward(request, response);
+		
+			} else if(operacion.equalsIgnoreCase("modificacion")) 
+			{
+				
+				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
+				view.forward(request, response);
+			}else if(operacion.equalsIgnoreCase("consulta"))
+			{
+				
+				int id = Integer.parseInt(request.getParameter("id"));
+				
+				new BackOfficeDAO().consultarCamiseta(id);
+				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
+				view.forward(request, response);
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
     
 	/**

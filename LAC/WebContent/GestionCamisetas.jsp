@@ -231,9 +231,11 @@
 								<h4>GESTION PRODUCTOS</h4>
 							</div>
 
-							<form action="ServletCamiseta" method="POST">
+							
+                            
+                            <form action="ServletCamiseta?operacion=alta" method="POST">
                             <div class="row">
-                           	<label><font size=4>Insertar Producto</font></label>
+                           	<label><font size=4>Insertar Camiseta</font></label>
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre">Color</label>
                                     <input type="text" class="form-control"  value="" name="color">
@@ -275,12 +277,89 @@
 								<button>Alta</button>
                                                              
                               </form>
+                              
+                               <form action="ServletCamiseta?operacion=modificacion" method="POST">
+                            <div class="row">
+                           	<label><font size=4>Modificar Camiseta</font></label>
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre">Color</label>
+                                    <input type="text" class="form-control"  value="" name="color">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="apellidos">Precio</label>
+                                    <input type="text" class="form-control"  value="" name="precio">
+                                </div>
+                               
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="Direccion">Genero</label>
+                                    <input type="text" class="form-control mb-3" value="" name="genero">
+                                   
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="codigoPostal">Talla</label>
+                                    <input type="text" class="form-control" value="" name="talla">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="ciudad">Categoria</label>
+                                    <input type="text" class="form-control"  value="" name="categoria">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="provincia">Stock</label>
+                                    <input type="text" class="form-control"  value="" name="stock">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="numero">Imagen</label>
+                                    <input type="text" class="form-control"  value="" name="url">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label for="correo">Descripcion</label>
+                                    <input type="text" class="form-control"  value="" name="descripcion">
+                                </div>
+                               </div>
+                               <p></p>
+								<button>Modificar</button>
+                                                             
+                              </form>
+                              
+                              <form action="ServletCamiseta?operacion=baja" method="POST">
+                            <div class="row">
+                           	<label><font size=4>Eliminar Camiseta</font></label>
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre">Id</label>
+                                    <input type="text" class="form-control"  value="" name="id">
+                                </div>
+                               
+                               </div>
+                               <p></p>
+								<button>Baja</button>
+                                                             
+                              </form>
+                              <form action="ServletCamiseta?operacion=consulta" method="POST">
+                            <div class="row">
+                           	<label><font size=4>Consultar Camiseta</font></label>
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre">Id</label>
+                                    <input type="text" class="form-control"  value="" name="id">
+                                </div>
+                               
+                               </div>
+                               <p></p>
+								<button>Consulta</button>
+                                                             
+                              </form>
                               </div>
                               </div>
                               </div>
                               </div>
                               </div>
+                              
+                              
                               </div>
+                              
+                            
+                        
                               
 								<!-- <div class="row">
 									<div class="catagories-menu">	

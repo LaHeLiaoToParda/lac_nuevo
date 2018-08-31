@@ -49,9 +49,8 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			ConexionDB con = new ConexionDB();
 			st = con.getConnection().createStatement();
 			String q = "INSERT INTO `lac`.`camisetas` (color, precio, genero, talla, categoria, stock, imagen, descripcion)" 
-						+ " VALUES ('"
-					+ c.getCategoria() + "', '" + c.getPrecio() + "', '" + c.getTalla() + "', '" + c.getGenero()
-					+ "', '" + c.getColor() + "', '" + c.getUrl() + "', '" + c.getDescripcion() + "')";
+						+ " VALUES ('"+ c.getColor() + "', '" + c.getPrecio() + "', '" + c.getGenero() + "', '" + c.getTalla()
+					+ "', '" + c.getCategoria() + "', '" + c.getStock() + "', '" + c.getUrl() + "', '" + c.getDescripcion() + "');";
 			Pantalla.write(q);
 			st.executeUpdate(q);
 			con.getConnection().close();
