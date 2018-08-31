@@ -34,14 +34,14 @@ public class ServletUsuario extends HttpServlet {
 			String operacion = request.getParameter("operacion");
 			
 			if(operacion.equalsIgnoreCase("alta")){
-				//CAMBIAR LOS SETTERS
 				u.setNick(request.getParameter("nick"));
 				u.setNombre(request.getParameter("nombre"));
 				u.setApellidos(request.getParameter("apellidos"));
 				u.setContrasena(request.getParameter("contrasena"));
 				u.setDireccion(request.getParameter("direccion"));
 				
-				boolean yaExiste = new BackOfficeDAO().comprobarUsuario(u.getNick());
+				boolean yaExiste = false;
+				yaExiste = new BackOfficeDAO().comprobarUsuario(u.getNick());
 				
 				if(yaExiste) {
 					Pantalla.write("No se pudo crear el nuevo usuario, el nick "+ u.getNick() + "ya existe.");
