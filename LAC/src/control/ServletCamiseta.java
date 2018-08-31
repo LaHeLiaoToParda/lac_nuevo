@@ -1,6 +1,8 @@
 package control;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,6 +50,8 @@ public class ServletCamiseta extends HttpServlet {
 				c.setDescripcion(request.getParameter("descripcion"));
 				
 				new BackOfficeDAO().altaCamiseta(c);
+//				RequestDispatcher view = request.getRequestDispatcher("/index.html");
+//				view.forward(request, response);
 				
 			} else if(operacion.equalsIgnoreCase("baja")) 
 			{
@@ -55,6 +59,8 @@ public class ServletCamiseta extends HttpServlet {
 				int id = Integer.parseInt(request.getParameter("id"));
 				
 				new BackOfficeDAO().bajaCamiseta(id);
+				RequestDispatcher view = request.getRequestDispatcher("/index.html");
+				view.forward(request, response);
 		
 			} else if(operacion.equalsIgnoreCase("modificar")) 
 			{
@@ -65,6 +71,8 @@ public class ServletCamiseta extends HttpServlet {
 				int id = Integer.parseInt(request.getParameter("id"));
 				
 				new BackOfficeDAO().consultarCamiseta(id);
+				RequestDispatcher view = request.getRequestDispatcher("/index.html");
+				view.forward(request, response);
 				
 			}
 		} catch (Exception e) {

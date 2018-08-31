@@ -231,14 +231,63 @@
 								<h4>GESTION PRODUCTOS</h4>
 							</div>
 
-							
-								<div class="row">
+							<form action="ServletCamiseta?operacion=alta" method="POST">
+                            <div class="row">
+                           	<label><font size=4>Insertar Producto</font></label>
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre">Color</label>
+                                    <input type="text" class="form-control"  value="" name="color">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="apellidos">Precio</label>
+                                    <input type="text" class="form-control"  value="" name="precio">
+                                </div>
+                               
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="Direccion">Genero</label>
+                                    <input type="text" class="form-control mb-3" value="" name="genero">
+                                   
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="codigoPostal">Talla</label>
+                                    <input type="text" class="form-control" value="" name="talla">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="ciudad">Categoria</label>
+                                    <input type="text" class="form-control"  value="" name="categoria">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="provincia">Stock</label>
+                                    <input type="text" class="form-control"  value="" name="stock">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="numero">Imagen</label>
+                                    <input type="text" class="form-control"  value="" name="url">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label for="correo">Descripcion</label>
+                                    <input type="text" class="form-control"  value="" name="descripcion">
+                                </div>
+                               </div>
+                               <p></p>
+								<input type="submit" class="btn essence-btn" value="Alta">
+                                                             
+                              </form>
+                              </div>
+                              </div>
+                              </div>
+                              </div>
+                              </div>
+                              </div>
+                              
+								<!-- <div class="row">
 									<div class="catagories-menu">	
 										<ul id="menu-content2" class="menu-content collapse show">
-											<!-- Single Item -->
-											<form action="ServletCamiseta?operacion=alta" method="POST">
-											<li data-target="#clothing"><a
-												href="#"><font size=4>Insertar Producto</font></a>
+											Single Item
+											<form action="ServletCamiseta" method="POST">
+											<li data-target="#clothing"><a href="#"><font size=4>Insertar Producto</font></a>
 												<ul id="clothing">
 													<li><a href="#">Color</a></li>
 													<input class="input100" type="text" name="color">
@@ -257,10 +306,21 @@
 													<li><a href="#">Descripción</a></li>
 													<input class="input100" type="text" name="descripcion">
 
-												</ul></li>
+												</ul>
+											</li>
 												<p></p>
 												<input type="submit" class="btn essence-btn" value="Alta">
-											<!-- Single Item -->
+											</form>
+											</ul>
+											</div>
+											</div>
+											</div>
+											</div>
+											</div>
+											</div>
+											</div>
+											</div>
+											Single Item
 											<form action="ServletCamiseta?operacion=baja" method="POST">
 											<li data-target="#shoes"><a href="#"><font size=4>Modificar Producto</font></a>
 														
@@ -287,8 +347,9 @@
 												</ul></li>
 												<p></p>
 												<input type="submit" class="btn essence-btn" value="Baja">
+												</form>  -->
 											<!-- Single Item -->
-											<form action="ServletCamiseta?operacion=modificar" method="POST">
+											<!-- <form action="ServletCamiseta?operacion=modificar" method="POST">
 											<li data-target="#shoes"><a href="#"><font size=4>Eliminar Producto</font></a>
 												<ul id="shoes">
 													<li><a href="#">Id</a></li>
@@ -296,9 +357,9 @@
 							
 												</ul></li>
 												<p></p>
-												<input type="submit" class="btn essence-btn" value="Modificar">
+												<input type="submit" class="btn essence-btn" value="Modificar"> -->
 											<!-- Single Item -->
-											<form action="ServletCamiseta?operacion=consulta" method="POST">
+											<!-- <form action="ServletCamiseta?operacion=consulta" method="POST">
 											<li data-target="#shoes"><a href="#"><font size=4>Consultar Producto</font></a>
 														
 												<ul id="shoes">
@@ -307,18 +368,9 @@
 													
 												</ul></li>
 												<p></p>
-												<input type="submit" class="btn essence-btn" value="Consultar">
-										</ul>
-									</div>
-							</form>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
+												<input type="submit" class="btn essence-btn" value="Consultar"> -->
+										
+			
 
 		<!--   <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
                     <div class="order-details-confirmation">
@@ -391,9 +443,6 @@
                         
                     </div>
                 </div>-->
-	</div>
-	</div>
-	</div>
 	<!-- ##### Checkout Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
