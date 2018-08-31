@@ -58,7 +58,7 @@ public class CamisetaDAO implements ICamisetaDAO {
 	}
 
 	//devolver coleccion segun categoria y genero
-	public List<Camiseta> mostrarCamisetasCategoriaGenero(String genero, String categoria) {
+	public List<Camiseta> mostrarCamisetasGeneroCategoria(String genero, String categoria) {
 		List camiCatGenero = new ArrayList<Camiseta>();
         Statement st = null;
         ResultSet rs = null;
@@ -224,6 +224,36 @@ public class CamisetaDAO implements ICamisetaDAO {
         } catch (SQLException ex) {
             Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    //devuelve una coleccion de camisetas segun el genero, la categoria y la talla
+    public List<Camiseta> mostrarCamisetasGeneroCategoriaTalla(String genero, String categoria, String talla) {
+		List<Camiseta> camisetas = new ArrayList<Camiseta>();
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            ConexionDB con = new ConexionDB();
+            st = con.getConnection().createStatement();
+            rs = st.executeQuery("SELECT * FROM `lac`.`camisetas`"
+            					+"WHERE genero='"+genero+"' AND categoria='"+categoria+"' AND  talla='"+talla+"';");
+            while (rs.next()) {
+            	Camiseta c = new Camiseta();
+            	c.setId(rs.getInt("id"));
+                c.setColor(Color.valueOf(rs.getString("color")));
+                c.setPrecio((rs.getFloat("precio")));
+                c.setGenero(Genero.valueOf(rs.getString("genero")));
+                c.setTalla(Talla.valueOf(rs.getString("talla")));
+                c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
+                c.setStock(rs.getInt("stock"));
+                c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
+                camisetas.add(c);
+            }
+            con.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return camisetas;
     }
     
 }

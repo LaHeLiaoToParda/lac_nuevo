@@ -54,16 +54,16 @@
 							<li><a href="#">Categoria</a>
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
-										<li class="title"><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Manga Corta</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga Larga</a></li>
+										<li class="title"><a href="ServletListado?operacion=3&genero=HOMBRE">HOMBRE</a></li>
+                                        <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
+                                        <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
+                                        <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
 									<ul class="single-mega cn-col-4">
-										<li class="title"><a  href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga Corta</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Mango Larga</a></li>
+										<li class="title"><a href="ServletListado?operacion=3&genero=MUJER">MUJER</a></li>
+                                        <li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
+                                        <li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
+                                        <li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
 									<div class="single-mega cn-col-4">
 										<img src="img/bg-img/bg-6.jpg" alt="">
@@ -220,13 +220,34 @@
 							<div class="catagories-menu">
 								<ul id="menu-content2" class="menu-content collapse show">
 									<!-- Single Item -->
-									<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">Mujer</a>
+									<li><a href="ServletListado?operacion=3&genero=MUJER">Mujer</a>
 										<ul class="sub-menu collapse show" id="clothing">
-											<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
-											<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
-											<li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
-										</ul></li>
-
+											<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
+												<ul>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_CORTA&talla=S">Talla S</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_CORTA&talla=M">Talla M</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_CORTA&talla=L">Talla L</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_CORTA&talla=XL">Talla XL</a></li>
+													<br>
+												</ul>
+											<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
+												<ul>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=TIRANTES&talla=S">Talla S</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=TIRANTES&talla=M">Talla M</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=TIRANTES&talla=L">Talla L</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=TIRANTES&talla=XL">Talla XL</a></li>
+													<br>
+												</ul>
+											<li><a href="ServletListado?operacion=4&genero=MUJER&&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
+												<ul>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_LARGA&talla=S">Talla S</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_LARGA&talla=M">Talla M</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_LARGA&talla=L">Talla L</a></li>
+													<li><a href="ServletListado?operacion=5&genero=MUJER&categoria=MANGA_LARGA&talla=XL">Talla XL</a></li>
+													<br>
+												</ul>
+										</ul>
+									</li>
 								</ul>
 							</div>
 						</div>

@@ -30,7 +30,8 @@ import model.Camiseta;
  * el WebServlet es el nombre del servlet para llamarlo desde un jsp o hmtl y que te redirija aqui
  *
  */
-public class ServletBarraBusqueda extends HttpServlet {
+public class ServletBarraBusqueda extends HttpServlet
+{
 	private static final long serialVersionUID = 1L;
 
 	/**

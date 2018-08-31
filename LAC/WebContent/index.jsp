@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,19 +51,20 @@
 							<li><a href="#">Categoria</a>
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
-										<li class="title"><a href="ServletListado?operacion=3&genero=HOMBRE">HOMBRE</a></li>
-										
-										<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
-                                    	<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-                                    	<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
+										<li class="title"><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
+				
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Manga Corta</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga Larga</a></li>
+
 									</ul>
 									<ul class="single-mega cn-col-4">
-										<li class="title"><a href="ServletListado?operacion=3&genero=MUJER">MUJER</a></li>
-									
-                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
-                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
-                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
+										 <li class="title"><a  href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
+                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga Corta</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
+                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Manga Larga</a></li>
 									</ul>
+
 									<div class="single-mega cn-col-4">
 										<img src="img/camisetas/patopeque.jpg" alt="">
 									</div>
@@ -74,7 +79,7 @@
 			<div class="header-meta d-flex clearfix justify-content-end">
 				<!-- Search Area -->
 				<div class="search-area">
-					<form action="ServletBarraBusqueda" method="POST">
+					<form action="Controlador" method="POST">
 						<input type="search" name="search" id="headerSearch"
 							placeholder="Type for search">
 						<button type="submit">
@@ -82,11 +87,12 @@
 						</button>
 					</form>
 				</div>
+				
 				<!-- Favourite Area -->
-				<!--<div class="favourite-area">
-					<a href="#"><img src="img/core-img/heart.svg" alt=""></a>
+				<div class="favourite-area">
+					<a href="#"><p>Bienvenido: ${sessionScope.usuario}</p></a>
 				</div>
-				-->
+				
 				<!-- User Login Info -->
 				<div class="user-login-info">
 					<a href="login.jsp"><img src="img/core-img/user.svg" alt=""></a>
@@ -193,7 +199,7 @@
                     <div class="hero-content">
                         <h2>PATO</h2>
 
-                        <a href="ServletListado?operacion=2" class="btn essence-btn">Acceder a la Tienda</a>
+                        <a href="ServletListado?operacion=listado" class="btn essence-btn">Acceder a la Tienda</a>
                     </div>
                 </div>
             </div>
