@@ -206,25 +206,25 @@
 
                 <div class="col-12 col-md-6">
                     <div class="checkout_details_area mt-50 clearfix">
-
+						<div class="order-details-confirmation">
                         <div class="cart-page-heading mb-30">
                             <h5>DATOS REGISTRO</h5>
                         </div>
 
-                        <form action="ServletUsuario" method="post">
+                        <form action="ServletUsuario?operacion=alta" method="POST">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre">Nombre <span>*</span></label>
-                                    <input type="text" class="form-control" id="first_name" value=""  required>
+                                    <input type="text" class="form-control" id="first_name" value="" name="nombre" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="apellidos">Apellidos <span>*</span></label>
                                     <input type="text" class="form-control" id="last_name" value="" name="apellidos" required>
                                 </div>
-                                <div class="col-12 mb-3">
+                                <!-- <div class="col-12 mb-3">
                                     <label for="DNI">DNI <span>*</span></label>
                                     <input type="text" class="form-control" id="dni" value="" name="dni" required>
-                                </div>
+                                </div> -->
                                 <!-- <div class="col-12 mb-3">
                                     <label for="company">Company Name</label>
                                     <input type="text" class="form-control" id="company" value="">
@@ -233,7 +233,7 @@
                                 <div class="col-12 mb-3">
                                     <label for="Direccion">Dirección <span>*</span></label>
                                     <input type="text" class="form-control mb-3" id="street_address" value="" name="direccion">
-                                    <input type="text" class="form-control" id="street_address2" value="">
+                                   
                                 </div>
                                 <!-- <div class="col-12 mb-3">
                                     <label for="pais">País <span>*</span></label>
@@ -270,13 +270,13 @@
                                 </div> -->
                                </div> 
                                 
-                                <div class="order-details-confirmation">
+                                
                                 <div class="col-12 mb-3">
                                 <div class="cart-page-heading">
-                            		<h5>Crea la clave y contraseña</h5>
+                            		<h5>Crea el usuario y contraseña</h5>
                         		</div>
                                     <label for="usuario">Nombre de Usuario <span>*</span></label>
-                                    <input type="text" class="form-control" id="postcode" value="" name="nombre">
+                                    <input type="text" class="form-control" id="postcode" value="" name="nick">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="contraseña">Contraseña <span>*</span></label>
@@ -303,8 +303,10 @@
                                     <input type="submit" class="btn essence-btn" value="Crear cuenta">
                                     </div>
                                     </div>
+                                    </form>
+                                    </div>
                                   </div>
-                                </form>
+                                
                               </div>
                                
                             </div>

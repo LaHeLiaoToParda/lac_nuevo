@@ -3,8 +3,9 @@ package model;
 import utilities.Pantalla;
 
 public class Usuario {
-
-	private String dni;
+	
+	private int id;
+	private String nick;
 	private String nombre;
 	private String apellidos;
 	private Rol rol;
@@ -15,9 +16,10 @@ public class Usuario {
 	public Usuario() {
 		
 	}
-	public Usuario(String dni, String nombre, String apellidos, Rol rol, String contrasena, String direccion) {
+	public Usuario(int id,String nick, String nombre, String apellidos, Rol rol, String contrasena, String direccion) {
 		super();
-		this.dni = dni;
+		this.id= id;
+		this.nick = nick;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.rol = rol;
@@ -27,11 +29,17 @@ public class Usuario {
 
 	
 	//getters y setters////////////////////////////////////////
-	public String getDni() {
-		return dni;
+	public int getId() {
+		return id;
 	}
-	public void setDni(String dni) {
-		this.dni = dni;
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 	public String getNombre() {
 		return nombre;
@@ -66,7 +74,8 @@ public class Usuario {
 	
 	//metodos///////////////////////////////////////////////////
 	public void mostrarDatos() {
-		Pantalla.write(getDni());
+		Pantalla.write(getId());
+		Pantalla.write(getNick());
 		Pantalla.write(getNombre());
 		Pantalla.write(getApellidos());
 		Pantalla.write(getRol());
