@@ -32,7 +32,9 @@ public class ServletUsuario extends HttpServlet {
 		try {
 			String operacion = request.getParameter("operacion");
 			
-			if(operacion.equalsIgnoreCase("alta")) {
+			if(operacion.equalsIgnoreCase("alta"))
+			{
+				//CAMBIAR LOS SETTERS
 				u.setDni(request.getParameter("dni"));
 				u.setDni(request.getParameter("nombre"));
 				u.setDni(request.getParameter("apellidos"));

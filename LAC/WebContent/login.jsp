@@ -220,7 +220,7 @@
     
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form action="ControlSesiones" method="POST" class="login100-form validate-form">
+				<form action="ControlLogin" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						LOGIN
 					</span>
