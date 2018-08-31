@@ -231,7 +231,7 @@
 								<h4>GESTION PRODUCTOS</h4>
 							</div>
 
-							<form action="ServletCamiseta?operacion=alta" method="POST">
+							<form action="ServletCamiseta" method="POST">
                             <div class="row">
                            	<label><font size=4>Insertar Producto</font></label>
                                 <div class="col-md-6 mb-3">
@@ -272,7 +272,7 @@
                                 </div>
                                </div>
                                <p></p>
-								<input type="submit" class="btn essence-btn" value="Alta">
+								<button>Alta</button>
                                                              
                               </form>
                               </div>

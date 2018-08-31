@@ -22,15 +22,15 @@ public class Test {
 	}
 	
 	public  void prueba1() {
-		Camiseta cam1 = new Camiseta(1,Categoria.MANGA_CORTA,15, Talla.L, Genero.HOMBRE, Color.AZUL, "/imagenes1.jpg",4,"descripcion");
-		Camiseta cam2 = new Camiseta(2,Categoria.MANGA_LARGA,20, Talla.M, Genero.HOMBRE, Color.VERDE, "/imagenes2.jpg",5,"descripcion");
-		Camiseta cam3 = new Camiseta(3,Categoria.TIRANTES,12, Talla.S, Genero.MUJER, Color.ROJO, "/imagenes3.jpg",7,"descripcion");
-		Camiseta cam4 = new Camiseta(4,Categoria.MANGA_CORTA,15, Talla.L, Genero.HOMBRE, Color.AZUL, "/imagenes4.jpg",3,"descripcion");
-		Camiseta cam5 = new Camiseta(5,Categoria.MANGA_CORTA,15, Talla.M, Genero.MUJER, Color.AZUL, "/imagenes5.jpg",7,"descripcion");
-		Camiseta cam6 = new Camiseta(6,Categoria.TIRANTES,12, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes6.jpg",3,"descripcion");
-		Camiseta cam7 = new Camiseta(7,Categoria.MANGA_LARGA,12, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes7.jpg",6,"descripcion");
-		Camiseta cam8 = new Camiseta(8,Categoria.MANGA_LARGA,40, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes8.jpg",33,"descripcion");
-		Camiseta cam9 = new Camiseta(33,Categoria.MANGA_LARGA,40, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes8.jpg",33,"descripcion");
+		Camiseta cam1 = new Camiseta(0,Categoria.MANGA_CORTA,15, Talla.L, Genero.HOMBRE, Color.AZUL, "/imagenes1.jpg",4,"descripcion");
+		Camiseta cam2 = new Camiseta(0,Categoria.MANGA_LARGA,20, Talla.M, Genero.HOMBRE, Color.VERDE, "/imagenes2.jpg",5,"descripcion");
+		Camiseta cam3 = new Camiseta(0,Categoria.TIRANTES,12, Talla.S, Genero.MUJER, Color.ROJO, "/imagenes3.jpg",7,"descripcion");
+		Camiseta cam4 = new Camiseta(0,Categoria.MANGA_CORTA,15, Talla.L, Genero.HOMBRE, Color.AZUL, "/imagenes4.jpg",3,"descripcion");
+		Camiseta cam5 = new Camiseta(0,Categoria.MANGA_CORTA,15, Talla.M, Genero.MUJER, Color.AZUL, "/imagenes5.jpg",7,"descripcion");
+		Camiseta cam6 = new Camiseta(0,Categoria.TIRANTES,12, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes6.jpg",3,"descripcion");
+		Camiseta cam7 = new Camiseta(0,Categoria.MANGA_LARGA,12, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes7.jpg",6,"descripcion");
+		Camiseta cam8 = new Camiseta(0,Categoria.MANGA_LARGA,40, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes8.jpg",33,"descripcion");
+		Camiseta cam9 = new Camiseta(0,Categoria.MANGA_LARGA,40, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes8.jpg",33,"descripcion");
 		//metodo Alta() no implementado, ya que deberia de ser una ventana en el navegador web con un formulario para introducir los datos
 		new CamisetaDAO().Alta(cam8);
 //		new CamisetaDAO().Alta(cam2);
