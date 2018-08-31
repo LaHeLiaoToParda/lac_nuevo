@@ -14,8 +14,8 @@ public class CamisetaService implements ICamisetaService {
 		return CamisetaDAO.listadoCamisetas();
 	}
 
-	public List<Camiseta> mostrarCamisetasCategoriaGenero(String genero, String categoria) {
-		return CamisetaDAO.mostrarCamisetasCategoriaGenero(genero, categoria);
+	public List<Camiseta> mostrarCamisetasGeneroCategoria(String genero, String categoria) {
+		return CamisetaDAO.mostrarCamisetasGeneroCategoria(genero, categoria);
 	}
 
 	public List<Camiseta> mostrarCamisetasGenero(String genero) {
@@ -26,9 +26,10 @@ public class CamisetaService implements ICamisetaService {
 		return CamisetaDAO.mostrarFichaTecnicaCamiseta(id);
 	}
 
-	public List<Camiseta> mostrarCamisetasCategoria(String categoria) {
-		return CamisetaDAO.mostrarCamisetasCategoria(categoria);
-	}
+//	Por ahora no loe stamos usando
+//	public List<Camiseta> mostrarCamisetasCategoria(String categoria) {
+//		return CamisetaDAO.mostrarCamisetasCategoria(categoria);
+//	}
 
 	public List<Camiseta> mostrarCamisetasTalla(String talla) {
 		return CamisetaDAO.mostrarCamisetasTalla(talla);

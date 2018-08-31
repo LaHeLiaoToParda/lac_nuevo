@@ -47,113 +47,181 @@ public class ServletListado extends HttpServlet {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		/**
-		 * Lista que se usara para almacenar los datos de la base de datos
-		 */
 		List<Camiseta> cam;
 
 		try {
-
-		/**
-		 * request.getParameter("operacion") --> recoge el valor de operacion en el href="ServletListado?operacion=genero&genero=HOMBRE"
-		 */
 			String operacion = request.getParameter("operacion");
-			String genero;
-			if (operacion.equalsIgnoreCase("genero")) {
-				genero = request.getParameter("genero");
-				
-				
-				/**
-				 * si el genero es de hombre , cargamos nuestra LIST con todas las camisetas de genero HOMBRE
-				 */
-				if (genero.equalsIgnoreCase("HOMBRE")) {
-					
-					/**
-					 * segun la categoria que recoja el enlace , cargamos nuestra LIST con todas las camisetas de genero HOMBRE y categoria elegida
-					 */
-					String categoria = request.getParameter("categoria");
-					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
+			String operacion2 = request.getParameter("operacion2");
+			String operacion3 = request.getParameter("operacion3");
+			String genero = request.getParameter("genero");
+			String categoria = request.getParameter("categoria");
+			String talla = request.getParameter("talla");
+			
+			if(operacion.equalsIgnoreCase("genero") && operacion2.equalsIgnoreCase("categoria") && operacion3.equalsIgnoreCase("talla")) {
+				//GENERO y CATEGORIA Y TALLA
+				if(genero.equalsIgnoreCase("hombre")) {
+					//hombre y categoria y talla
+					cam = new CamisetaDAO().mostrarCamisetasGeneroCategoriaTalla(genero, categoria, talla);
 					request.setAttribute("Lista", cam);
-					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("SOLO")) {
-						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
-						request.setAttribute("Lista", cam);
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
-						view.forward(request, response);
-					}
-					
-					/**
-					 * si el genero es de hombre , cargamos nuestra LIST con todas las camisetas de genero HOMBRE
-					 */
-				} else if (genero.equalsIgnoreCase("MUJER")) {
-					String categoria = request.getParameter("categoria");
-					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
+					RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+					view.forward(request, response);
+				} else {
+					//mujer y categoria y talla
+					cam = new CamisetaDAO().mostrarCamisetasGeneroCategoriaTalla(genero, categoria, talla);
 					request.setAttribute("Lista", cam);
-					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					} else if (categoria.equalsIgnoreCase("SOLO")) {
-						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
-						request.setAttribute("Lista", cam);
-						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
-						view.forward(request, response);
-					}
+					RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+					view.forward(request, response);
 				}
 				
-				/**
-				 * si la operacion del enlace href="ServletListado?operacion=listado"
-				 */
-			} else if (operacion.equalsIgnoreCase("listado")) {
+			} else if(operacion.equalsIgnoreCase("genero") && operacion2.equalsIgnoreCase("categoria") && !operacion3.equalsIgnoreCase("talla")) {
+				//GENERO y CATEGORIA
+				if(genero.equalsIgnoreCase("hombre")) {
+					//hombre y categoria
+					cam = new CamisetaDAO().mostrarCamisetasGeneroCategoria(genero, categoria);
+					request.setAttribute("Lista", cam);
+					RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+					view.forward(request, response);
+				} else {
+					//mujer y categoria
+					cam = new CamisetaDAO().mostrarCamisetasGeneroCategoria(genero, categoria);
+					request.setAttribute("Lista", cam);
+					RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+					view.forward(request, response);
+				}
+				
+			} else if(operacion.equalsIgnoreCase("genero") && !operacion2.equalsIgnoreCase("categoria") && !operacion3.equalsIgnoreCase("talla")) {
+				//GENERO
+				if(genero.equalsIgnoreCase("hombre")) {
+					//hombre y genero
+					cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
+					request.setAttribute("Lista", cam);
+					RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+					view.forward(request, response);
+					
+				} else {
+					//mujer y genero
+					cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
+					request.setAttribute("Lista", cam);
+					RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+					view.forward(request, response);
+				}
+			} else if(operacion.equalsIgnoreCase("listado")) {
+				//TODAS
 				cam = new CamisetaDAO().listadoCamisetas();
 				request.setAttribute("Lista", cam);
 				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
 				view.forward(request, response);
 				
-			}
-			/**
-			 * si la operacion del enlace href="ServletListado?operacion=listado"
-			 */
-			else if(operacion.equalsIgnoreCase("id")){
+			} else if(operacion.equalsIgnoreCase("id")) {
+				//ID
 				Camiseta camiseta = new Camiseta();
-				/**
-				 * recoge el id del boton de la camiseta
-				 */
 				String id = request.getParameter("id");
 				int idCamiseta= Integer.parseInt(id);
-				
-				/**
-				 * llamamos al metodo fichatecnica segun el id que se le pase
-				 */
 				camiseta = new CamisetaService().mostrarFichaTecnicaCamiseta(idCamiseta);
 				request.setAttribute("Camiseta", camiseta);
-				/**
-				 * redireccion al jsp fichaTecnica.jsp
-				 */
 				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
 				view.forward(request, response);
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+						
+			
+			
+			
+//			//antiguo/////////////////
+//			if (operacion.equalsIgnoreCase("genero")) {
+//				genero = request.getParameter("genero");
+//				
+//				
+//				/**
+//				 * si el genero es de hombre , cargamos nuestra LIST con todas las camisetas de genero HOMBRE
+//				 */
+//				if (genero.equalsIgnoreCase("HOMBRE")) {
+//					
+//					/**
+//					 * segun la categoria que recoja el enlace , cargamos nuestra LIST con todas las camisetas de genero HOMBRE y categoria elegida
+//					 */
+//					String categoria = request.getParameter("categoria");
+//					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
+//					request.setAttribute("Lista", cam);
+//					
+//					
+//					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("SOLO")) {
+//						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
+//						request.setAttribute("Lista", cam);
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
+//						view.forward(request, response);
+//					}
+//					
+//					/**
+//					 * si el genero es de hombre , cargamos nuestra LIST con todas las camisetas de genero HOMBRE
+//					 */
+//				} else if (genero.equalsIgnoreCase("MUJER")) {
+//					String categoria = request.getParameter("categoria");
+//					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
+//					request.setAttribute("Lista", cam);
+//					if (categoria.equalsIgnoreCase("MANGA_CORTA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("MANGA_LARGA")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("TIRANTES")) {
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					} else if (categoria.equalsIgnoreCase("SOLO")) {
+//						cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
+//						request.setAttribute("Lista", cam);
+//						RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
+//						view.forward(request, response);
+//					}
+//				}
+//				
+//				/**
+//				 * si la operacion del enlace href="ServletListado?operacion=listado"
+//				 */
+//			} else if (operacion.equalsIgnoreCase("listado")) {
+//				cam = new CamisetaDAO().listadoCamisetas();
+//				request.setAttribute("Lista", cam);
+//				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
+//				view.forward(request, response);
+//			}
+//			/**
+//			 * si la operacion del enlace href="ServletListado?operacion=listado"
+//			 */
+//			else if(operacion.equalsIgnoreCase("id")){
+//				Camiseta camiseta = new Camiseta();
+//				/**
+//				 * recoge el id del boton de la camiseta
+//				 */
+//				String id = request.getParameter("id");
+//				int idCamiseta= Integer.parseInt(id);
+//				
+//				/**
+//				 * llamamos al metodo fichatecnica segun el id que se le pase
+//				 */
+//				camiseta = new CamisetaService().mostrarFichaTecnicaCamiseta(idCamiseta);
+//				request.setAttribute("Camiseta", camiseta);
+//				/**
+//				 * redireccion al jsp fichaTecnica.jsp
+//				 */
+//				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
+//				view.forward(request, response);
+//			}
+
 
 	
 
