@@ -275,7 +275,7 @@
                                 <div class="cart-page-heading">
                             		<h5>Crea el usuario y contraseña</h5>
                         		</div>
-                                    <label for="usuario">Nombre de Usuario <span>*</span></label>
+                                    <label for="usuario">Nick <span>*</span></label>
                                     <input type="text" class="form-control" id="postcode" value="" name="nick">
                                 </div>
                                 <div class="col-12 mb-3">

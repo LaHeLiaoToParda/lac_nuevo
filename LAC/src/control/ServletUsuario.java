@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import data.BackOfficeDAO;
 import model.Usuario;
+import utilities.Pantalla;
 
 /**
  * Servlet implementation class ServletUsuario
@@ -40,7 +41,18 @@ public class ServletUsuario extends HttpServlet {
 				u.setContrasena(request.getParameter("contrasena"));
 				u.setDireccion(request.getParameter("direccion"));
 				
-				new BackOfficeDAO().altaUsuario(u);
+				boolean yaExiste = new BackOfficeDAO().comprobarUsuario(u.getNick());
+				
+				if(yaExiste) {
+					Pantalla.write("No se pudo crear el nuevo usuario, el nick "+ u.getNick() + "ya existe.");
+					u.setNick(null);
+					request.setAttribute("usuario", u);
+					RequestDispatcher view = request.getRequestDispatcher("/formulario.jsp");
+					view.forward(request, response);
+				} else {
+					new BackOfficeDAO().altaUsuario(u);
+				}
+				
 				
 			} else if(operacion.equalsIgnoreCase("baja")) {
 //				Para el 3er Sprint
