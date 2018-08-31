@@ -87,21 +87,20 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			ConexionDB con = new ConexionDB();
 			st = con.getConnection().createStatement();
 
-			String q = "Select * FROM camisetas WHERE id='" + id + "'";
-			
+			String q = "SELECT color, precio, genero, talla, categoria, stock, imagen, descripcion FROM camisetas WHERE id=" + id + "";
 			rs = st.executeQuery(q);
 
 //			c.setId(rs.getInt("id"));
 			c.setColor(Color.valueOf(rs.getString("color")));
-			c.setPrecio((rs.getFloat("precio")));
-			c.setGenero(Genero.valueOf(rs.getString("genero")));
-			c.setTalla(Talla.valueOf(rs.getString("talla")));
-			c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
-			c.setStock(rs.getInt("stock"));
-			c.setUrl(rs.getString("imagen"));
-			c.setDescripcion(rs.getString("descripcion"));
+            c.setPrecio((rs.getFloat("precio")));
+            c.setGenero(Genero.valueOf(rs.getString("genero")));
+            c.setTalla(Talla.valueOf(rs.getString("talla")));
+            c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
+            c.setStock(rs.getInt("stock"));
+            c.setUrl(rs.getString("imagen"));
+            c.setDescripcion(rs.getString("descripcion"));
 			con.getConnection().close();
-			
+
 		} catch (SQLException ex) {
 			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}

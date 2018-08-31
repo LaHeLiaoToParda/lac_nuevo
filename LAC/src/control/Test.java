@@ -45,8 +45,9 @@ public class Test {
 	}
 	public static void prueba2(){
 		
-		
-		System.out.println(new BackOfficeDAO().consultarCamiseta(16).toString());
+		Camiseta h = new Camiseta();
+		h = new BackOfficeDAO().consultarCamiseta(16);
+		System.out.println(h.toString());
 	}
 	
 }
