@@ -48,9 +48,10 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 		try {
 			ConexionDB con = new ConexionDB();
 			st = con.getConnection().createStatement();
-			String q = "INSERT INTO `lac`.`camisetas` (color, precio, genero, talla, categoria, stock, imagen, descripcion)" + " VALUES ('"
+			String q = "INSERT INTO `lac`.`camisetas` (color, precio, genero, talla, categoria, stock, imagen, descripcion)" 
+						+ " VALUES ('"
 					+ c.getCategoria() + "', '" + c.getPrecio() + "', '" + c.getTalla() + "', '" + c.getGenero()
-					+ "', '" + c.getColor() + "', '" + c.getUrl() + "', '" + c.getDescripcion() + "'";
+					+ "', '" + c.getColor() + "', '" + c.getUrl() + "', '" + c.getDescripcion() + "')";
 			Pantalla.write(q);
 			st.executeUpdate(q);
 			con.getConnection().close();
@@ -113,7 +114,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 		ConexionDB con = new ConexionDB();
 		st = con.getConnection().createStatement();
 
-		String q = "SELECT * FROM `lac`.`usuarios` WHERE nick ='" + nick + "'";
+		String q = "SELECT * FROM `lac`.`usuarios` WHERE nick ='" + nick + "';";
 		st.executeQuery(q);
 
 		if (st.getResultSet() == null) {
@@ -129,7 +130,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 		st = con.getConnection().createStatement();
 
 		String q = "SELECT nick, contrasena FROM usuarios WHERE nick ='" + nick + "' AND contrasena='" + contrasena
-				+ "'";
+				+ "';";
 		st.executeQuery(q);
 
 		if (st.getResultSet() != null) {

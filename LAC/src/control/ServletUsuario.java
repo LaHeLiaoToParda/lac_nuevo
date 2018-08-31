@@ -43,7 +43,7 @@ public class ServletUsuario extends HttpServlet {
 				boolean yaExiste = false;
 				yaExiste = new BackOfficeDAO().comprobarUsuario(u.getNick());
 				
-				if(yaExiste) {
+				if(!yaExiste) {
 					Pantalla.write("No se pudo crear el nuevo usuario, el nick "+ u.getNick() + "ya existe.");
 					u.setNick(null);
 					request.setAttribute("usuario", u);
