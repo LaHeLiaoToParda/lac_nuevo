@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import data.BackOfficeDAO;
 import data.CamisetaDAO;
 import data.ConexionDB;
 import model.Camiseta;
@@ -41,6 +42,11 @@ public class Test {
 //		new CamisetaDAO().Alta(cam7);
 		
 		
+	}
+	public static void prueba2(){
+		
+		
+		System.out.println(new BackOfficeDAO().consultarCamiseta(16).toString());
 	}
 	
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -236,11 +237,11 @@
                             <form action="ServletCamiseta?operacion=alta" method="POST">
                             <div class="row">
                            	<label><font size=4>Insertar Camiseta</font></label>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="nombre">Color</label>
                                     <input type="text" class="form-control"  value="" name="color">
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="apellidos">Precio</label>
                                     <input type="text" class="form-control"  value="" name="precio">
                                 </div>
@@ -281,11 +282,11 @@
                                <form action="ServletCamiseta?operacion=modificacion" method="POST">
                             <div class="row">
                            	<label><font size=4>Modificar Camiseta</font></label>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="nombre">Color</label>
                                     <input type="text" class="form-control"  value="" name="color">
                                 </div>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="apellidos">Precio</label>
                                     <input type="text" class="form-control"  value="" name="precio">
                                 </div>
@@ -326,7 +327,7 @@
                               <form action="ServletCamiseta?operacion=baja" method="POST">
                             <div class="row">
                            	<label><font size=4>Eliminar Camiseta</font></label>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="nombre">Id</label>
                                     <input type="text" class="form-control"  value="" name="id">
                                 </div>
@@ -339,7 +340,7 @@
                               <form action="ServletCamiseta?operacion=consulta" method="POST">
                             <div class="row">
                            	<label><font size=4>Consultar Camiseta</font></label>
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="nombre">Id</label>
                                     <input type="text" class="form-control"  value="" name="id">
                                 </div>
@@ -351,24 +352,22 @@
                               </form>
                          <!-- Espacio para la consulta de camisetas -->
                          
+                        <%--  <c:if test= > --%>
+                         
         					<div class="single_product_desc clearfix">
   
                         		<div >
-                        			<samp>${Camiseta.categoria}</samp>
-                					<span>${Camiseta.genero}</span>
-                    				<span><b>TALLA:</b> ${Camiseta.talla}</span>
-                    				<span><b>COLOR:</b> ${Camiseta.color}</span>
-                   					<span><b>STOCK:</b> ${Camiseta.stock}</span>
-                   					<span><b>${Camiseta.precio}€</b></span>
-                   					<span><b>Descripción:</b> ${Camiseta.descripcion}</span>
+                        			<p><b>CATEGORIA: </b><samp value="${Camiseta.categoria}"></samp>
+                					<p><span><b>GENERO: </b>${Camiseta.genero}</span>
+                    				<p><span><b>TALLA: </b> ${Camiseta.talla}</span>
+                    				<p><span><b>COLOR: </b> ${Camiseta.color}</span>
+                   					<p><span><b>STOCK: </b> ${Camiseta.stock}</span>
+                   					<p><span><b>PRECIO: </b>${Camiseta.precio}€</span>
+                   					<p><span><b>DESCRIPCION: </b> ${Camiseta.descripcion}</span>
                    					
                 				</div>
-                <p class="product-price">${Camiseta.precio}€</p>
-   
-                <div class="cart-fav-box d-flex align-items-center">
-          
-                </div>
-        </div>
+        					  </div>
+        				<%-- </c:if> --%>
                               </div>
                               </div>
                               </div>

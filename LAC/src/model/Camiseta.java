@@ -97,6 +97,12 @@ public  class Camiseta {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "Camiseta [id=" + id + ", color=" + color + ", precio=" + precio + ", genero=" + genero + ", talla="
+				+ talla + ", categoria=" + categoria + ", stock=" + stock + ", url=" + url + ", descripcion="
+				+ descripcion + "]";
+	}
 	//metodos///////////////////////////////////////////////////
 	public void mostrarDatos() {
 		Pantalla.write(getId());
