@@ -211,7 +211,7 @@
                             <h5>DATOS REGISTRO</h5>
                         </div>
 
-                        <form action="ServletUsuario" method="post">
+                        <form action="ServletUsuario?operacion=alta" method="POST">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre">Nombre <span>*</span></label>
