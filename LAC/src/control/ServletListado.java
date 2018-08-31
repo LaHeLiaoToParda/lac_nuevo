@@ -1,5 +1,9 @@
 package control;
 
+/**
+ * @author Opazo
+ */
+
 import java.io.IOException;
 import java.util.List;
 
@@ -18,6 +22,12 @@ import services.CamisetaService;
 /**
  * Servlet implementation class ServletListado
  */
+
+/**
+ * 
+ * redireccion hacia el servlet, en los jsp para referirse a este servlet deben poner esta ruta
+ *
+ */
 @WebServlet("/ServletListado")
 public class ServletListado extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,20 +39,41 @@ public class ServletListado extends HttpServlet {
 		super();
 
 	}
-
+	
+	/**
+	 * Metodo que recoge datos del jsp  y envia elementos al jsp
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		/**
+		 * Lista que se usara para almacenar los datos de la base de datos
+		 */
 		List<Camiseta> cam;
 
 		try {
 
+		/**
+		 * request.getParameter("operacion") --> recoge el valor de operacion en el href="ServletListado?operacion=genero&genero=HOMBRE"
+		 */
 			String operacion = request.getParameter("operacion");
 			String genero;
 			if (operacion.equalsIgnoreCase("genero")) {
 				genero = request.getParameter("genero");
 				
+				
+				/**
+				 * si el genero es de hombre , cargamos nuestra LIST con todas las camisetas de genero HOMBRE
+				 */
 				if (genero.equalsIgnoreCase("HOMBRE")) {
+					
+					/**
+					 * segun la categoria que recoja el enlace , cargamos nuestra LIST con todas las camisetas de genero HOMBRE y categoria elegida
+					 */
 					String categoria = request.getParameter("categoria");
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
 					request.setAttribute("Lista", cam);
@@ -61,6 +92,10 @@ public class ServletListado extends HttpServlet {
 						RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 						view.forward(request, response);
 					}
+					
+					/**
+					 * si el genero es de hombre , cargamos nuestra LIST con todas las camisetas de genero HOMBRE
+					 */
 				} else if (genero.equalsIgnoreCase("MUJER")) {
 					String categoria = request.getParameter("categoria");
 					cam = new CamisetaDAO().mostrarCamisetasCategoriaGenero(genero, categoria);
@@ -81,19 +116,36 @@ public class ServletListado extends HttpServlet {
 						view.forward(request, response);
 					}
 				}
+				
+				/**
+				 * si la operacion del enlace href="ServletListado?operacion=listado"
+				 */
 			} else if (operacion.equalsIgnoreCase("listado")) {
 				cam = new CamisetaDAO().listadoCamisetas();
 				request.setAttribute("Lista", cam);
 				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
 				view.forward(request, response);
 				
-			} else if(operacion.equalsIgnoreCase("id")){
+			}
+			/**
+			 * si la operacion del enlace href="ServletListado?operacion=listado"
+			 */
+			else if(operacion.equalsIgnoreCase("id")){
 				Camiseta camiseta = new Camiseta();
+				/**
+				 * recoge el id del boton de la camiseta
+				 */
 				String id = request.getParameter("id");
 				int idCamiseta= Integer.parseInt(id);
 				
+				/**
+				 * llamamos al metodo fichatecnica segun el id que se le pase
+				 */
 				camiseta = new CamisetaService().mostrarFichaTecnicaCamiseta(idCamiseta);
 				request.setAttribute("Camiseta", camiseta);
+				/**
+				 * redireccion al jsp fichaTecnica.jsp
+				 */
 				RequestDispatcher view = request.getRequestDispatcher("/fichaTecnica.jsp");
 				view.forward(request, response);
 			}
@@ -103,30 +155,7 @@ public class ServletListado extends HttpServlet {
 		}
 	}
 
-	/*
-	 * operacion = request.getParameter("operacion"); DAOPais op = new
-	 * DAOPais();
-	 * 
-	 * if (operacion.equals("alta")) { //ALTA op.Alta(recogerDatos(request));
-	 * response.sendRedirect("paises?operacion=listado"); } else if
-	 * (operacion.equals("baja")) { // BAJA
-	 * op.Baja(request.getParameter("cod"));
-	 * response.sendRedirect("paises?operacion=listado"); } else if
-	 * (operacion.equals("detalle")) { // DETALLE request.setAttribute("paises",
-	 * op.Detalle(request.getParameter("cod"))); RequestDispatcher view =
-	 * request.getRequestDispatcher("/detalle.jsp"); view.forward(request,
-	 * response); } else if (operacion.equals("modificacion")) { // MODIFICACION
-	 * request.setAttribute("paises", op.Detalle(request.getParameter("cod")));
-	 * RequestDispatcher view = request.getRequestDispatcher("/update.jsp");
-	 * view.forward(request, response); } else if (operacion.equals("update")) {
-	 * // UPDATE op.Update(recogerDatos(request));
-	 * response.sendRedirect("paises?operacion=listado"); } else if
-	 * (operacion.equals("listado")) { // LISTADO request.setAttribute("paises",
-	 * op.Listado()); RequestDispatcher view =
-	 * request.getRequestDispatcher("/listado.jsp"); view.forward(request,
-	 * response); }
-	 * 
-	 */
+	
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
