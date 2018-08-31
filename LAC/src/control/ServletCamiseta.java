@@ -54,6 +54,8 @@ public class ServletCamiseta extends HttpServlet {
 //				c.setId(Integer.parseInt(request.getParameter("id")));
 				
 //				new BackOfficeDAO().bajaCamiseta(c);
+			} else if(operacion.equalsIgnoreCase("modificar")) {
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
