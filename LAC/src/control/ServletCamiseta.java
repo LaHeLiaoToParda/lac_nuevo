@@ -36,8 +36,8 @@ public class ServletCamiseta extends HttpServlet {
 		try {
 			String operacion = request.getParameter("operacion");
 			
-			if(operacion.equalsIgnoreCase("alta")) {
-				c.setId(Integer.parseInt(request.getParameter("id")));
+			if(operacion.equalsIgnoreCase("alta")) 
+			{
 				c.setColor(Color.valueOf(request.getParameter("color")));
 				c.setPrecio(Float.parseFloat(request.getParameter("precio")));
 				c.setGenero(Genero.valueOf(request.getParameter("genero")));
@@ -49,12 +49,22 @@ public class ServletCamiseta extends HttpServlet {
 				
 				new BackOfficeDAO().altaCamiseta(c);
 				
-			} else if(operacion.equalsIgnoreCase("baja")) {
-//				Para el 3er Sprint
-//				c.setId(Integer.parseInt(request.getParameter("id")));
+			} else if(operacion.equalsIgnoreCase("baja")) 
+			{
 				
-//				new BackOfficeDAO().bajaCamiseta(c);
-			} else if(operacion.equalsIgnoreCase("modificar")) {
+				int id = Integer.parseInt(request.getParameter("id"));
+				
+				new BackOfficeDAO().bajaCamiseta(id);
+		
+			} else if(operacion.equalsIgnoreCase("modificar")) 
+			{
+				
+			}else if(operacion.equalsIgnoreCase("consulta"))
+			{
+				
+				int id = Integer.parseInt(request.getParameter("id"));
+				
+				new BackOfficeDAO().consultarCamiseta(id);
 				
 			}
 		} catch (Exception e) {
@@ -66,14 +76,14 @@ public class ServletCamiseta extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		processRequest(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		processRequest(request, response);
 	}
 
 }

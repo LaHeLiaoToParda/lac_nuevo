@@ -9,5 +9,7 @@ public interface IBackOffice {
 //	public void bajaUsuario(Usuario u); funcion para ajustesCuentaUsuario.jsp o un menu de admin, para el 3er Sprint
 //	public void editUserRol(Usuario u); funcion para que un admin cambie el rol de otro usuario ya registrado a administrador (para 3er Sprint)
 	public void altaCamiseta(Camiseta c);
-//	public void bajaCamiseta(Camiseta c);
+	public void bajaCamiseta(int id);
+	public void modificarCamiseta();
+	public Camiseta consultarCamiseta(int id);
 }

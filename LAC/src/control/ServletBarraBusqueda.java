@@ -20,13 +20,16 @@ import model.Camiseta;
  * Servlet implementation class Controlador
  */
 
+/**
+ * Reciba el argumento de la barra de busqueda y segun su contenido muestra lo que busques.
+ */
 
+@WebServlet("/ServletBarraBusqueda")
 /**
  * 
  * el WebServlet es el nombre del servlet para llamarlo desde un jsp o hmtl y que te redirija aqui
  *
  */
-@WebServlet("/ServletBarraBusqueda")
 public class ServletBarraBusqueda extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -53,20 +56,42 @@ public class ServletBarraBusqueda extends HttpServlet {
             String busqueda = request.getParameter("search");// devuelve lo del
             /**
              * request.setAttribute("elem",elem)--> para introducirle elementos al jsp o html que despues redirija y usarlos en los jsp.
-             * En este caso le  pasamos el titulo que le vamos a pintar en el jsp, depen
+             * En este caso le  pasamos el titulo que le vamos a pintar en el jsp con la busqueda realizada
+             * EJ: si escribes pepe, te saldra en el jsp de salida el titulo pepe entre comillas
              * 
              */
             request.setAttribute("titulo", busqueda);                                                    // buscador
  
+            
+            /**
+             * Depenediendo de lo que escribas en el input mostraremos segun los parametros lo que el usuario esta buscando
+             */
+            /**
+             * En este caso es todo lo relacionado con camisetas de hombre
+             */
             if (busqueda.equalsIgnoreCase("hombre") || busqueda.equalsIgnoreCase("camisetas de hombre")
+            
                     || busqueda.equalsIgnoreCase("camisetas de chico") || busqueda.equalsIgnoreCase("camiseta chico")
                     || busqueda.equalsIgnoreCase("camisetas hombre") || busqueda.equalsIgnoreCase("camisetas chico")
                     || busqueda.equalsIgnoreCase("camiseta hombre"))//
             {
                 cam = new CamisetaDAO().mostrarCamisetasGenero("hombre");
+                /**
+                 * cargamos nuestra LISTA con el metodo segun genero de nuestra interfaz CamisetasDAO
+                 */
                 request.setAttribute("Lista", cam);
+                /**
+                 * enviamos la coleccion con el atributo cam, con este atributo manejaremos la coleccion en el jsp de salida 
+                 * en nuestro caso recorreremos la LISTA con el foreach
+                 */
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                /**
+                 * con view , pintaremos el archivo jsp seleccionado
+                 */
                 view.forward(request, response);
+                /**
+                 * con view.forward ejecutamos el metodo.
+                 */
             } else if (busqueda.equalsIgnoreCase("mujer") || busqueda.equalsIgnoreCase("camisetas de mujer")
                     || busqueda.equalsIgnoreCase("camisetas de chica") || busqueda.equalsIgnoreCase("camiseta chica")
                     || busqueda.equalsIgnoreCase("camisetas mujer") || busqueda.equalsIgnoreCase("camisetas chica")
@@ -112,6 +137,10 @@ public class ServletBarraBusqueda extends HttpServlet {
             }
             else
             {
+            	/**
+                 * En el caso de que la palabra recogida del input no entren en ningun filtro, llegara aqui y le redireccionaremos
+                 * a un jsp donde le especifacara al usuario su busqueda y que no se han encontrado productos.
+                 */
             	RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
             	view.forward(request, response);
             }
@@ -120,6 +149,11 @@ public class ServletBarraBusqueda extends HttpServlet {
             e.printStackTrace();
         }
     }
+    
+    
+    /**
+     * Tanto los metodos doGet como doPost implementaran el metodo ProcessRequest.
+     */
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		processRequest(request, response);
