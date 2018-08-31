@@ -299,7 +299,7 @@
 											<a href="single-product-details.html">
 											</a>
 											<p class="product-price">Talla ${mi.talla}  -  ${mi.precio}€</p>
-											<h6><a href="ServletListado?operacion=id&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
+											<h6><a href="ServletListado?operacion=1&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
 											<div class="hover-content">
 												<!-- Add to Cart -->
