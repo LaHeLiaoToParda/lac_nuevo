@@ -10,5 +10,5 @@ public interface IBackOfficeDAO {
 	public void altaCamiseta(Camiseta c);
 	public void bajaCamiseta(int id);
 	public void modificarCamiseta();
-	public void consultarCamiseta();
+	public Camiseta consultarCamiseta(int id);
 }

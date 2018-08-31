@@ -27,7 +27,7 @@ public class BackOffice implements IBackOffice {
 	public void modificarCamiseta(){
 		backOfficeDAO.modificarCamiseta();
 	}
-	public void consultarCamiseta(){
-		backOfficeDAO.consultarCamiseta();
+	public Camiseta consultarCamiseta(int id){
+		backOfficeDAO.consultarCamiseta(id);
 	}
 }
