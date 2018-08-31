@@ -231,12 +231,12 @@
 								<h4>GESTION PRODUCTOS</h4>
 							</div>
 
-							<form action="ServletUsuario?operacion=alta" method="POST">
+							
 								<div class="row">
-									<div class="catagories-menu">
-										
+									<div class="catagories-menu">	
 										<ul id="menu-content2" class="menu-content collapse show">
 											<!-- Single Item -->
+											<form action="ServletCamiseta?operacion=alta" method="POST">
 											<li data-target="#clothing"><a
 												href="#"><font size=4>Insertar Producto</font></a>
 												<ul id="clothing">
@@ -253,15 +253,17 @@
 													<li><a href="#">Stock</a></li>
 													<input class="input100" type="text" name="stock">
 													<li><a href="#">Imagen</a></li>
-													<input class="input100" type="text" name="imagen">
+													<input class="input100" type="text" name="url">
 													<li><a href="#">Descripción</a></li>
 													<input class="input100" type="text" name="descripcion">
 
 												</ul></li>
+												<p></p>
+												<input type="submit" class="btn essence-btn" value="Alta">
 											<!-- Single Item -->
-											<li data-target="#shoes"
-												class="collapsed"><a href="#"><font size=4>Modificar
-														Producto</font></a>
+											<form action="ServletCamiseta?operacion=baja" method="POST">
+											<li data-target="#shoes"><a href="#"><font size=4>Modificar Producto</font></a>
+														
 												<ul id="shoes">
 													<li><a href="#">Id</a></li>
 													<input class="input100" type="text" name="id">
@@ -278,32 +280,34 @@
 													<li><a href="#">Stock</a></li>
 													<input class="input100" type="text" name="stock">
 													<li><a href="#">Imagen</a></li>
-													<input class="input100" type="text" name="imagen">
+													<input class="input100" type="text" name="url">
 													<li><a href="#">Descripción</a></li>
 													<input class="input100" type="text" name="descripcion">
 
 												</ul></li>
+												<p></p>
+												<input type="submit" class="btn essence-btn" value="Baja">
 											<!-- Single Item -->
-											<li data-target="#shoes"
-												class="collapsed"><a href="#"><font size=4>Modificar
-														Producto</font></a>
+											<form action="ServletCamiseta?operacion=modificar" method="POST">
+											<li data-target="#shoes"><a href="#"><font size=4>Eliminar Producto</font></a>
+												<ul id="shoes">
+													<li><a href="#">Id</a></li>
+													<input class="input100" type="text" name="id">
+							
+												</ul></li>
+												<p></p>
+												<input type="submit" class="btn essence-btn" value="Modificar">
+											<!-- Single Item -->
+											<form action="ServletCamiseta?operacion=consulta" method="POST">
+											<li data-target="#shoes"><a href="#"><font size=4>Consultar Producto</font></a>
+														
 												<ul id="shoes">
 													<li><a href="#">Id</a></li>
 													<input class="input100" type="text" name="id">
 													
-
 												</ul></li>
-
-											<!-- Single Item -->
-											<li data-target="#shoes"
-												class="collapsed"><a href="#"><font size=4>Modificar
-														Producto</font></a>
-												<ul id="shoes">
-													<li><a href="#">Id</a></li>
-													<input class="input100" type="text" name="id">
-													
-
-												</ul></li>
+												<p></p>
+												<input type="submit" class="btn essence-btn" value="Consultar">
 										</ul>
 									</div>
 							</form>
