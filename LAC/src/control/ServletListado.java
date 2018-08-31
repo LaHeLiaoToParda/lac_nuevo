@@ -18,6 +18,7 @@ import data.CamisetaDAO;
 import model.Camiseta;
 
 import services.CamisetaService;
+import utilities.Pantalla;
 
 /**
  * Servlet implementation class ServletListado
@@ -56,13 +57,11 @@ public class ServletListado extends HttpServlet {
 
 		try {
 			String operacion = request.getParameter("operacion");
-			String operacion2 = request.getParameter("operacion2");
-			String operacion3 = request.getParameter("operacion3");
 			String genero = request.getParameter("genero");
 			String categoria = request.getParameter("categoria");
 			String talla = request.getParameter("talla");
 			
-			if(operacion.equalsIgnoreCase("genero") && operacion2.equalsIgnoreCase("categoria") && operacion3.equalsIgnoreCase("talla")) {
+			if(operacion.equalsIgnoreCase("5")) {
 				//GENERO y CATEGORIA Y TALLA
 				if(genero.equalsIgnoreCase("hombre")) {
 					//hombre y categoria y talla
@@ -78,7 +77,7 @@ public class ServletListado extends HttpServlet {
 					view.forward(request, response);
 				}
 				
-			} else if(operacion.equalsIgnoreCase("genero") && operacion2.equalsIgnoreCase("categoria") && !operacion3.equalsIgnoreCase("talla")) {
+			} else if(operacion.equalsIgnoreCase("4")) {
 				//GENERO y CATEGORIA
 				if(genero.equalsIgnoreCase("hombre")) {
 					//hombre y categoria
@@ -93,8 +92,7 @@ public class ServletListado extends HttpServlet {
 					RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 					view.forward(request, response);
 				}
-				
-			} else if(operacion.equalsIgnoreCase("genero") && !operacion2.equalsIgnoreCase("categoria") && !operacion3.equalsIgnoreCase("talla")) {
+			} else if(operacion.equalsIgnoreCase("3")) {
 				//GENERO
 				if(genero.equalsIgnoreCase("hombre")) {
 					//hombre y genero
@@ -110,14 +108,14 @@ public class ServletListado extends HttpServlet {
 					RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
 					view.forward(request, response);
 				}
-			} else if(operacion.equalsIgnoreCase("listado")) {
+			} else if(operacion.equalsIgnoreCase("2")) {
 				//TODAS
 				cam = new CamisetaDAO().listadoCamisetas();
 				request.setAttribute("Lista", cam);
 				RequestDispatcher view = request.getRequestDispatcher("/camisetas_Todas.jsp");
 				view.forward(request, response);
 				
-			} else if(operacion.equalsIgnoreCase("id")) {
+			} else if(operacion.equalsIgnoreCase("1")) {
 				//ID
 				Camiseta camiseta = new Camiseta();
 				String id = request.getParameter("id");
