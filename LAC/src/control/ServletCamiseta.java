@@ -64,8 +64,19 @@ public class ServletCamiseta extends HttpServlet {
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
 		
-			} else if(operacion.equalsIgnoreCase("modificacion")) 
+			} else if(operacion.equalsIgnoreCase("modificar")) 
 			{
+				int id = Integer.parseInt(request.getParameter("id"));
+				String color = request.getParameter("color");
+				float precio = Float.parseFloat(request.getParameter("precio"));
+				String genero = request.getParameter("genero");
+				String talla = request.getParameter("talla");
+				String categoria = request.getParameter("categoria");
+				int stock = Integer.parseInt(request.getParameter("stock"));
+				String imagen = request.getParameter("url");
+				String descripcion = request.getParameter("descripcion");
+				
+				new BackOfficeDAO().modificarCamiseta(id, color, precio, genero, talla, categoria, stock, imagen, descripcion);
 				
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);

@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,15 +43,17 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
-	//Añade camisetas a la base de datos
+
+	// Añade camisetas a la base de datos
 	public void altaCamiseta(Camiseta c) {
 		Statement st = null;
 		try {
 			ConexionDB con = new ConexionDB();
 			st = con.getConnection().createStatement();
-			String q = "INSERT INTO `lac`.`camisetas` (color, precio, genero, talla, categoria, stock, imagen, descripcion)" 
-						+ " VALUES ('"+ c.getColor() + "', '" + c.getPrecio() + "', '" + c.getGenero() + "', '" + c.getTalla()
-					+ "', '" + c.getCategoria() + "', '" + c.getStock() + "', '" + c.getUrl() + "', '" + c.getDescripcion() + "');";
+			String q = "INSERT INTO `lac`.`camisetas` (color, precio, genero, talla, categoria, stock, imagen, descripcion)"
+					+ " VALUES ('" + c.getColor() + "', '" + c.getPrecio() + "', '" + c.getGenero() + "', '"
+					+ c.getTalla() + "', '" + c.getCategoria() + "', '" + c.getStock() + "', '" + c.getUrl() + "', '"
+					+ c.getDescripcion() + "');";
 			Pantalla.write(q);
 			st.executeUpdate(q);
 			con.getConnection().close();
@@ -60,7 +61,8 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
-	//Elimina camisetas de la base de datos
+
+	// Elimina camisetas de la base de datos
 	public void bajaCamiseta(int id) {
 
 		Statement st = null;
@@ -75,39 +77,55 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
-	//Cambia los atributos de la camiseta en la base de datos
-	public void modificarCamiseta() {
+
+	// Cambia los atributos de la camiseta en la base de datos
+	public void modificarCamiseta(int id, String color, float precio, String genero, String talla, String categoria, int stock,
+			String imagen, String descripcion) {
+
+		Statement st = null;
+		try {
+			ConexionDB con = new ConexionDB();
+			st = con.getConnection().createStatement();
+			String q = "UPDATE camisetas SET color = '" + color + "', precio = '" + precio + "', genero = '" + genero
+					+ "', talla = '" + talla + "', categoria = '" + categoria + "', stock = '" + stock + "', imagen = '"
+					+ imagen + "', descripcion = '" + descripcion + "' WHERE id = '" +  id + "'";
+			st.executeUpdate(q);
+			con.getConnection().close();
+		} catch (SQLException ex) {
+			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
+		}
 
 	}
-	//Devuelve un camiseta de la base de datos pasandole un id
+
+	// Devuelve un camiseta de la base de datos pasandole un id
 	public ArrayList<Camiseta> consultarCamiseta(int id) {
-		ArrayList listadoCamisetas = new ArrayList<Camiseta>();
-        Statement st = null;
-        ResultSet rs = null;
-        
-        try {
-            ConexionDB con = new ConexionDB();
-            st = con.getConnection().createStatement();
-            String q = "SELECT * FROM camisetas WHERE id='" + id + "'";
-            rs = st.executeQuery(q);
-            while (rs.next()) {   	
-            	Camiseta c = new Camiseta();
-            	c.setId(rs.getInt("id"));
-                c.setColor(Color.valueOf(rs.getString("color")));
-                c.setPrecio((rs.getFloat("precio")));
-                c.setGenero(Genero.valueOf(rs.getString("genero")));
-                c.setTalla(Talla.valueOf(rs.getString("talla")));
-                c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
-                c.setStock(rs.getInt("stock"));
-                c.setUrl(rs.getString("imagen"));
-                c.setDescripcion(rs.getString("descripcion"));
-                listadoCamisetas.add(c);
-            }
-            con.getConnection().close();
-        } catch (SQLException ex) {
-            Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return listadoCamisetas;
+		ArrayList<Camiseta> listadoCamisetas = new ArrayList<Camiseta>();
+		Statement st = null;
+		ResultSet rs = null;
+
+		try {
+			ConexionDB con = new ConexionDB();
+			st = con.getConnection().createStatement();
+			String q = "SELECT * FROM camisetas WHERE id='" + id + "'";
+			rs = st.executeQuery(q);
+			while (rs.next()) {
+				Camiseta c = new Camiseta();
+				c.setId(rs.getInt("id"));
+				c.setColor(Color.valueOf(rs.getString("color")));
+				c.setPrecio((rs.getFloat("precio")));
+				c.setGenero(Genero.valueOf(rs.getString("genero")));
+				c.setTalla(Talla.valueOf(rs.getString("talla")));
+				c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
+				c.setStock(rs.getInt("stock"));
+				c.setUrl(rs.getString("imagen"));
+				c.setDescripcion(rs.getString("descripcion"));
+				listadoCamisetas.add(c);
+			}
+			con.getConnection().close();
+		} catch (SQLException ex) {
+			Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		return listadoCamisetas;
 	}
 
 	public boolean comprobarUsuario(String nick) throws SQLException {
@@ -160,7 +178,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 	// }
 
 	// añade una nueva camiseta a la bbdd
-	
+
 	// elimina una camiseta de la bbdd segun el id
 	// para el 3er sprint
 	// public void bajaCamiseta(Camiseta c) {

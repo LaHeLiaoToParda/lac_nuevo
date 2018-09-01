@@ -12,6 +12,6 @@ public interface IBackOffice {
 //	public void editUserRol(Usuario u); funcion para que un admin cambie el rol de otro usuario ya registrado a administrador (para 3er Sprint)
 	public void altaCamiseta(Camiseta c);
 	public void bajaCamiseta(int id);
-	public void modificarCamiseta();
+	public void modificarCamiseta(int id, String color, float precio, String genero, String talla, String categoria, int stock, String imagen, String descripcion);
 	public List<Camiseta> consultarCamiseta(int id);
 }

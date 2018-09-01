@@ -279,7 +279,7 @@
                                                              
                               </form>
                               
-                               <form action="ServletCamiseta?operacion=modificacion" method="POST">
+                               <form action="ServletCamiseta?operacion=modificar" method="POST">
                             <div class="row">
                            	<label><font size=4>Modificar Camiseta</font></label>
                            	 	<div class="col-md-12 mb-3">
