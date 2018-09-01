@@ -49,7 +49,7 @@ public class Usuario {
 		
 	}
 	/**
-	 * metodo para crear un usuario con unos parametros especificos
+	 * Metodo para crear un usuario con unos parametros especificos
 	 * @param id - Establece el id de un usuario
 	 * @param nick - Establece el nick de un usuario en un String
 	 * @param nombre - Establece el nombre dle usuario en un string
