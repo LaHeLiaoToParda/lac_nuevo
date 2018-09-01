@@ -1,5 +1,7 @@
 package services;
 
+import java.util.List;
+
 import model.Camiseta;
 import model.Usuario;
 
@@ -11,5 +13,5 @@ public interface IBackOffice {
 	public void altaCamiseta(Camiseta c);
 	public void bajaCamiseta(int id);
 	public void modificarCamiseta();
-	public Camiseta consultarCamiseta(int id);
+	public List<Camiseta> consultarCamiseta(int id);
 }

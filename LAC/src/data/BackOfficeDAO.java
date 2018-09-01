@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -78,33 +80,34 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 
 	}
 	//Devuelve un camiseta de la base de datos pasandole un id
-	public Camiseta consultarCamiseta(int id) {
-
-		Statement st = null;
-		ResultSet rs = null;
-		Camiseta c = new Camiseta();
-		try {
-			ConexionDB con = new ConexionDB();
-			st = con.getConnection().createStatement();
-
-			String q = "SELECT color, precio, genero, talla, categoria, stock, imagen, descripcion FROM camisetas WHERE id=" + id + "";
-			rs = st.executeQuery(q);
-
-//			c.setId(rs.getInt("id"));
-			c.setColor(Color.valueOf(rs.getString("color")));
-            c.setPrecio((rs.getFloat("precio")));
-            c.setGenero(Genero.valueOf(rs.getString("genero")));
-            c.setTalla(Talla.valueOf(rs.getString("talla")));
-            c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
-            c.setStock(rs.getInt("stock"));
-            c.setUrl(rs.getString("imagen"));
-            c.setDescripcion(rs.getString("descripcion"));
-			con.getConnection().close();
-
-		} catch (SQLException ex) {
-			Logger.getLogger(BackOfficeDAO.class.getName()).log(Level.SEVERE, null, ex);
-		}
-		return c;
+	public ArrayList<Camiseta> consultarCamiseta(int id) {
+		ArrayList listadoCamisetas = new ArrayList<Camiseta>();
+        Statement st = null;
+        ResultSet rs = null;
+        
+        try {
+            ConexionDB con = new ConexionDB();
+            st = con.getConnection().createStatement();
+            String q = "SELECT * FROM camisetas WHERE id='" + id + "'";
+            rs = st.executeQuery(q);
+            while (rs.next()) {   	
+            	Camiseta c = new Camiseta();
+            	c.setId(rs.getInt("id"));
+                c.setColor(Color.valueOf(rs.getString("color")));
+                c.setPrecio((rs.getFloat("precio")));
+                c.setGenero(Genero.valueOf(rs.getString("genero")));
+                c.setTalla(Talla.valueOf(rs.getString("talla")));
+                c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
+                c.setStock(rs.getInt("stock"));
+                c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
+                listadoCamisetas.add(c);
+            }
+            con.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listadoCamisetas;
 	}
 
 	public boolean comprobarUsuario(String nick) throws SQLException {

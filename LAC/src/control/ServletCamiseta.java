@@ -1,6 +1,8 @@
 package control;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -71,9 +73,10 @@ public class ServletCamiseta extends HttpServlet {
 			{
 				
 				int id = Integer.parseInt(request.getParameter("id"));
-				Camiseta cam = new Camiseta();
-				cam = new BackOfficeDAO().consultarCamiseta(id);
-				request.setAttribute("Camiseta", cam);
+				//Camiseta cam = new Camiseta();
+				List camisetas = new ArrayList<Camiseta>();
+				camisetas = new BackOfficeDAO().consultarCamiseta(id);
+				request.setAttribute("Camiseta", camisetas);
 				
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);

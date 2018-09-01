@@ -282,6 +282,10 @@
                                <form action="ServletCamiseta?operacion=modificacion" method="POST">
                             <div class="row">
                            	<label><font size=4>Modificar Camiseta</font></label>
+                           	 	<div class="col-md-12 mb-3">
+                                    <label for="nombre">Id</label>
+                                    <input type="text" class="form-control"  value="" name="id">
+                                </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="nombre">Color</label>
                                     <input type="text" class="form-control"  value="" name="color">
@@ -352,22 +356,22 @@
                               </form>
                          <!-- Espacio para la consulta de camisetas -->
                          
-                        <%--  <c:if test= > --%>
+                        <c:forEach var="mi" items="${Camiseta}">
                          
         					<div class="single_product_desc clearfix">
   
                         		<div >
-                        			<p><b>CATEGORIA: </b><samp value="${Camiseta.categoria}"></samp>
-                					<p><span><b>GENERO: </b>${Camiseta.genero}</span>
-                    				<p><span><b>TALLA: </b> ${Camiseta.talla}</span>
-                    				<p><span><b>COLOR: </b> ${Camiseta.color}</span>
-                   					<p><span><b>STOCK: </b> ${Camiseta.stock}</span>
-                   					<p><span><b>PRECIO: </b>${Camiseta.precio}€</span>
-                   					<p><span><b>DESCRIPCION: </b> ${Camiseta.descripcion}</span>
+                        			<p><samp><b>CATEGORIA: </b> ${mi.categoria}</samp>
+                					<p><span><b>GENERO: </b>${mi.genero}</span>
+                    				<p><span><b>TALLA: </b> ${mi.talla}</span>
+                    				<p><span><b>COLOR: </b> ${mi.color}</span>
+                   					<p><span><b>STOCK: </b> ${mi.stock}</span>
+                   					<p><span><b>PRECIO: </b>${mi.precio}€</span>
+                   					<p><span><b>DESCRIPCION: </b> ${mi.descripcion}</span>
                    					
                 				</div>
         					  </div>
-        				<%-- </c:if> --%>
+        				</c:forEach>
                               </div>
                               </div>
                               </div>

@@ -1,5 +1,7 @@
 package services;
 
+import java.util.List;
+
 import data.BackOfficeDAO;
 import data.IBackOfficeDAO;
 import model.Camiseta;
@@ -27,7 +29,7 @@ public class BackOffice implements IBackOffice {
 	public void modificarCamiseta(){
 		backOfficeDAO.modificarCamiseta();
 	}
-	public Camiseta consultarCamiseta(int id){
+	public List<Camiseta> consultarCamiseta(int id){
 		return backOfficeDAO.consultarCamiseta(id);
 	}
 }
