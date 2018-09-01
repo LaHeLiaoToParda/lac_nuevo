@@ -40,8 +40,7 @@ public class ServletCamiseta extends HttpServlet {
 		try {
 			String operacion = request.getParameter("operacion");
 			
-			if(operacion.equalsIgnoreCase("alta")) 
-			{
+			if(operacion.equalsIgnoreCase("alta")) {
 				c.setColor(Color.valueOf(request.getParameter("color")));
 				c.setPrecio(Float.parseFloat(request.getParameter("precio")));
 				c.setGenero(Genero.valueOf(request.getParameter("genero")));
@@ -55,17 +54,14 @@ public class ServletCamiseta extends HttpServlet {
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
 				
-			} else if(operacion.equalsIgnoreCase("baja")) 
-			{
-				
+			} else if(operacion.equalsIgnoreCase("baja")) {
 				int id = Integer.parseInt(request.getParameter("id"));
 				
 				new BackOfficeDAO().bajaCamiseta(id);
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
 		
-			} else if(operacion.equalsIgnoreCase("modificar")) 
-			{
+			} else if(operacion.equalsIgnoreCase("modificar")) {
 				int id = Integer.parseInt(request.getParameter("id"));
 				String color = request.getParameter("color");
 				float precio = Float.parseFloat(request.getParameter("precio"));
@@ -80,8 +76,7 @@ public class ServletCamiseta extends HttpServlet {
 				
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
-			}else if(operacion.equalsIgnoreCase("consulta"))
-			{
+			}else if(operacion.equalsIgnoreCase("consulta")) {
 				
 				int id = Integer.parseInt(request.getParameter("id"));
 				//Camiseta cam = new Camiseta();
@@ -91,7 +86,6 @@ public class ServletCamiseta extends HttpServlet {
 				
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
-				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
