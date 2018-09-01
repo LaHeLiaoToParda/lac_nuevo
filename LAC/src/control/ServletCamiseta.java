@@ -85,9 +85,9 @@ public class ServletCamiseta extends HttpServlet {
 				
 				int id = Integer.parseInt(request.getParameter("id"));
 				//Camiseta cam = new Camiseta();
-				List camisetas = new ArrayList<Camiseta>();
-				camisetas = new BackOfficeDAO().consultarCamiseta(id);
-				request.setAttribute("Camiseta", camisetas);
+				Camiseta cam = new Camiseta();
+				cam = new BackOfficeDAO().consultarCamiseta(id);
+				request.setAttribute("Camiseta", cam);
 				
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);

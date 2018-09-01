@@ -98,8 +98,8 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 	}
 
 	// Devuelve un camiseta de la base de datos pasandole un id
-	public ArrayList<Camiseta> consultarCamiseta(int id) {
-		ArrayList<Camiseta> listadoCamisetas = new ArrayList<Camiseta>();
+	public Camiseta consultarCamiseta(int id) {
+		Camiseta c = new Camiseta();
 		Statement st = null;
 		ResultSet rs = null;
 
@@ -109,7 +109,6 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 			String q = "SELECT * FROM camisetas WHERE id='" + id + "'";
 			rs = st.executeQuery(q);
 			while (rs.next()) {
-				Camiseta c = new Camiseta();
 				c.setId(rs.getInt("id"));
 				c.setColor(Color.valueOf(rs.getString("color")));
 				c.setPrecio((rs.getFloat("precio")));
@@ -119,13 +118,12 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 				c.setStock(rs.getInt("stock"));
 				c.setUrl(rs.getString("imagen"));
 				c.setDescripcion(rs.getString("descripcion"));
-				listadoCamisetas.add(c);
 			}
 			con.getConnection().close();
 		} catch (SQLException ex) {
 			Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		return listadoCamisetas;
+		return c;
 	}
 
 	public boolean comprobarUsuario(String nick) throws SQLException {
