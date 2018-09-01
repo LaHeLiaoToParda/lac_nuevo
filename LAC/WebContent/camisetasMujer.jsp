@@ -55,18 +55,18 @@
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
 										<li class="title"><a href="ServletListado?operacion=3&genero=HOMBRE">HOMBRE</a></li>
-                                        <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
-                                        <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
+										<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
 									<ul class="single-mega cn-col-4">
 										<li class="title"><a href="ServletListado?operacion=3&genero=MUJER">MUJER</a></li>
-                                        <li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
-                                        <li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
 									<div class="single-mega cn-col-4">
-										<img src="img/bg-img/bg-6.jpg" alt="">
+										<img src="img/camisetas/patopeque.jpg" alt="">
 									</div>
 								</div>
 						</ul>
@@ -196,7 +196,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="page-title text-center">
-						<h2>MUJER</h2>
+						<h2>QUACKMISETAS MUJER</h2>
 					</div>
 				</div>
 			</div>

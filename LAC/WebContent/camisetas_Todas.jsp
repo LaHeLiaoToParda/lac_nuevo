@@ -53,22 +53,19 @@
 							<li><a href="#">Categoria</a>
 								<div class="megamenu">
 									<ul class="single-mega cn-col-4">
-										<li class="title"><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
-				
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA CORTA">Manga Corta</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA LARGA">Manga Larga</a></li>
-
+										<li class="title"><a href="ServletListado?operacion=3&genero=HOMBRE">HOMBRE</a></li>
+										<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
 									<ul class="single-mega cn-col-4">
-										 <li class="title"><a  href="operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
-                                         <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga Corta</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
-                                        <li><a href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Manga Larga</a></li>
+										<li class="title"><a href="ServletListado?operacion=3&genero=MUJER">MUJER</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
+                                    	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
 									</ul>
-
 									<div class="single-mega cn-col-4">
-										<img src="img/bg-img/bg-6.jpg" alt="">
+										<img src="img/camisetas/patopeque.jpg" alt="">
 									</div>
 								</div>
 						</ul>
@@ -198,7 +195,7 @@
 			<div class="row h-100 align-items-center">
 				<div class="col-12">
 					<div class="page-title text-center">
-						<h2>LISTADO DE CAMISETAS</h2>
+						<h2>TODAS LAS QUACKMISETAS</h2>
 					</div>
 				</div>
 			</div>
@@ -216,27 +213,26 @@
 						<!-- ##### Single Widget ##### -->
 						<div class="widget catagory mb-50">
 							<!-- Widget Title -->
-							<h6 class="widget-title mb-30">Catagories</h6>
+							<h6 class="widget-title mb-30">CATEGORIA</h6>
 
 							<!--  Catagories  -->
 							<div class="catagories-menu">
 								<ul id="menu-content2" class="menu-content collapse show">
 									<!-- Single Item -->
-									<li data-toggle="collapse" data-target="#clothing"><a
-										href="#">Hombre</a>
+									<li><a href="ServletListado?operacion=3&genero=HOMBRE">Hombre</a>
 										<ul class="sub-menu collapse show" id="clothing">
-											<li><a href="shop.html">Camiseta Maga Corta</a></li>
-											<li><a href="shop.html">Camiseta Tirantes</a></li>
-											<li><a href="shop.html">Camiseta Manga Larga</a></li>
-										</ul></li>
-									<li data-toggle="collapse" data-target="#clothing"><a
-										href="#">Mujer</a>
+											<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
+											<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Camiseta Tirantes</a></li>
+											<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
+										</ul>
+									</li>
+									<li><a href="ServletListado?operacion=3&genero=MUJER">Mujer</a>
 										<ul class="sub-menu collapse show" id="clothing">
-											<li><a href="shop.html">Camiseta Maga Corta</a></li>
-											<li><a href="shop.html">Camiseta Tirantes</a></li>
-											<li><a href="shop.html">Camiseta Manga Larga</a></li>
-										</ul></li>
-
+											<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
+											<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
+											<li><a href="ServletListado?operacion=4&genero=MUJER&&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
+										</ul>
+									</li>
 								</ul>
 							</div>
 						</div>

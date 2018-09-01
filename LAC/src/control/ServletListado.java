@@ -95,14 +95,14 @@ public class ServletListado extends HttpServlet {
 			} else if(operacion.equalsIgnoreCase("3")) {
 				//GENERO
 				if(genero.equalsIgnoreCase("hombre")) {
-					//hombre y genero
+					//hombre
 					cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
 					request.setAttribute("Lista", cam);
 					RequestDispatcher view = request.getRequestDispatcher("/camisetasHombre.jsp");
 					view.forward(request, response);
 					
 				} else {
-					//mujer y genero
+					//mujer
 					cam = new CamisetaDAO().mostrarCamisetasGenero(genero);
 					request.setAttribute("Lista", cam);
 					RequestDispatcher view = request.getRequestDispatcher("/camisetasMujer.jsp");
