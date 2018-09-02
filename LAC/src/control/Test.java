@@ -56,14 +56,11 @@ public class Test {
 	
 	public static void p3() throws SQLException {
 		String user = "pepe";
-		boolean cam;
-		cam = new BackOfficeDAO().comprobarUsuario(user);
 		
-		if(cam) {
+		if(new BackOfficeDAO().comprobarUsuario(user)) {
 			System.out.println("Usuario "+user+" ya existe");
 		} else {
 			System.out.println("Usuario "+user+" no existe");
-			
 		}
 	}
 	
