@@ -84,6 +84,10 @@
 						</button>
 					</form>
 				</div>
+				<!-- User Login Info -->
+				<div class="user-login-info">
+					<a href="GestionCamisetas.jsp">Panel Admin></a>
+				</div>
 				
 				<!-- Favourite Area -->
 				<div class="favourite-area">
