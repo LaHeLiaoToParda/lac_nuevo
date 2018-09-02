@@ -135,12 +135,12 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 		st = con.getConnection().createStatement();
 
 		String q = "SELECT * FROM `lac`.`usuarios` WHERE nick ='" + nick + "';";
-		st.executeQuery(q);
+		ResultSet rs = st.executeQuery(q);
 
-		if (st.getResultSet() == null) {
-			return false;
-		} else {
+		if (rs.next()) {
 			return true;
+		} else {
+			return false;
 		}
 	}
 
