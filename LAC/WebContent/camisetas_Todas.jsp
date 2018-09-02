@@ -2,7 +2,9 @@
 	pageEncoding="ISO-8859-1"%> --%>
 	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -222,15 +224,29 @@
 									<li><a href="ServletListado?operacion=3&genero=HOMBRE">Hombre</a>
 										<ul class="sub-menu collapse show" id="clothing">
 											<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
+												<ul>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_CORTA&talla=S">Talla S</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_CORTA&talla=M">Talla M</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_CORTA&talla=L">Talla L</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_CORTA&talla=XL">Talla XL</a></li>
+													<br>
+												</ul>
 											<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Camiseta Tirantes</a></li>
+												<ul>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=TIRANTES&talla=S">Talla S</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=TIRANTES&talla=M">Talla M</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=TIRANTES&talla=L">Talla L</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=TIRANTES&talla=XL">Talla XL</a></li>
+													<br>
+												</ul>
 											<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
-										</ul>
-									</li>
-									<li><a href="ServletListado?operacion=3&genero=MUJER">Mujer</a>
-										<ul class="sub-menu collapse show" id="clothing">
-											<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Camiseta Maga Corta</a></li>
-											<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Camiseta Tirantes</a></li>
-											<li><a href="ServletListado?operacion=4&genero=MUJER&&categoria=MANGA_LARGA">Camiseta Manga Larga</a></li>
+												<ul>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_LARGA&talla=S">Talla S</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_LARGA&talla=M">Talla M</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_LARGA&talla=L">Talla L</a></li>
+													<li><a href="ServletListado?operacion=5&genero=HOMBRE&categoria=MANGA_LARGA&talla=XL">Talla XL</a></li>
+													<br>
+												</ul>
 										</ul>
 									</li>
 								</ul>
@@ -248,7 +264,7 @@
 									<!-- Total Products -->
 									<div class="total-products">
 										<p>
-											<span>186</span> products found
+											<span>${fn:length(Lista)}</span> productos encontrados
 										</p>
 									</div>
 								</div>
@@ -282,7 +298,7 @@
 										<div class="product-description">
 											<%-- <span>${mi.categoria}</span> --%>
 											<p class="product-price">Talla ${mi.talla}  -  ${mi.precio} €</p>
-												<h6><a href="ServletListado?operacion=id&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
+												<h6><a href="ServletListado?operacion=1&id=${mi.id}" class="btn essence-btn">VER PRODUCTO</a></h6>
 											<!-- Hover Content -->
 											<div class="hover-content">
 												<!-- Add to Cart -->
