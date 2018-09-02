@@ -11,3 +11,11 @@
     /* ---------------------------------------
     ##### - PLACE YOUR CUSTOM CSS HERE - #####
     --------------------------------------- */
+    
+    
+    .noMostrar {
+    	display: none;
+    }
+    .mostrar {
+    	display: block;
+    }

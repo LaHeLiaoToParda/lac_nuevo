@@ -68,6 +68,7 @@ ol {
 img {
   height: auto;
   max-width: 100%; }
+  
 
 /* Spacing */
 .mt-15 {
@@ -1748,8 +1749,16 @@ img {
           font-weight: 300; }
           .contact-area .contact-info .contact-address p:last-child a:hover {
             color: #0315ff; }
+            
 
 /* ##### The End ##### */
+
+.noMostrar {
+	display: none;
+	}
+.mostrar {
+	display: block;
+	}
 
 /*# sourceMappingURL=core-style.css.map */
 

@@ -12,6 +12,44 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+  
+  function changeInsertarCamisetaDiv(){
+	    var divId = document.getElementById("desplegableInsertar");
+	    var currentClass = divId.className;
+	    if (currentClass == "noMostrar") { // si el elemento ya esta oculto
+	        divId.className = "mostrar";   // muestro el elemento
+	    } else {
+	        divId.className = "noMostrar";  // si el elemento NO esta ocutlo, lo oculto
+	    }
+	}
+  function changeModificarCamisetaDiv(){
+	    var divId = document.getElementById("desplegableModificar");
+	    var currentClass = divId.className;
+	    if (currentClass == "noMostrar") { // si el elemento ya esta oculto
+	        divId.className = "mostrar";   // muestro el elemento
+	    } else {
+	        divId.className = "noMostrar";  // si el elemento NO esta ocutlo, lo oculto
+	    }
+	}
+  function changeEliminarCamisetaDiv(){
+	    var divId = document.getElementById("desplegableEliminar");
+	    var currentClass = divId.className;
+	    if (currentClass == "noMostrar") { // si el elemento ya esta oculto
+	        divId.className = "mostrar";   // muestro el elemento
+	    } else {
+	        divId.className = "noMostrar";  // si el elemento NO esta ocutlo, lo oculto
+	    }
+	}
+  function changeConsultarCamisetaDiv(){
+	    var divId = document.getElementById("desplegableConsultar");
+	    var currentClass = divId.className;
+	    if (currentClass == "noMostrar") { // si el elemento ya esta oculto
+	        divId.className = "mostrar";   // muestro el elemento
+	    } else {
+	        divId.className = "noMostrar";  // si el elemento NO esta ocutlo, lo oculto
+	    }
+	}
+  
   $( function() {
     $( "#accordion" ).accordion({
       collapsible: true
@@ -29,6 +67,7 @@
 <!-- Core Style CSS -->
 <link rel="stylesheet" href="css/core-style.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/menuAdmin.css">
 
 </head>
 
@@ -217,30 +256,27 @@
 					<div class="checkout_details_area mt-50 clearfix">
 						<div class="order-details-confirmation">
 							<div class="cart-page-heading mb-30">
-								<h4>GESTION PRODUCTOS</h4>
+								<h3>GESTION PRODUCTOS</h3>
 							</div>
 
-							
-                            
+
                             <form action="ServletCamiseta?operacion=alta" method="POST">
                             <div class="row">
-                           	<label><font size=4>Insertar Camiseta</font></label>
-                                <div class="col-md-12 mb-3">
-                                    <label for="nombre">Color</label>
-                                    <input type="text" class="form-control"  value="" name="color">
-                                </div>
-                                <div class="col-md-12 mb-3">
-                                    <label for="apellidos">Precio</label>
-                                    <input type="text" class="form-control"  value="" name="precio">
-                                </div>
-                               
-                                
+                           	<label><a href="#" onclick="changeInsertarCamisetaDiv();"><h6>Insertar Camiseta</h6></a></label>
+                           		<div id="desplegableInsertar" class="noMostrar">
+                           			 <div class="col-md-12 mb-3">
+	                                    <label for="nombre">Color</label>
+                                    	<input type="text" class="form-control"  value="" name="color">
+                                    </div>
+                                	<div class="col-md-12 mb-3">
+	                                    <label for="apellidos">Precio</label>
+                                    	<input type="text" class="form-control"  value="" name="precio">
+                                	</div>
                                 <div class="col-12 mb-3">
                                     <label for="Direccion">Genero</label>
                                     <input type="text" class="form-control mb-3" value="" name="genero">
                                    
                                 </div>
-                                
                                 <div class="col-12 mb-3">
                                     <label for="codigoPostal">Talla</label>
                                     <input type="text" class="form-control" value="" name="talla">
@@ -260,16 +296,18 @@
                                 <div class="col-12 mb-4">
                                     <label for="correo">Descripcion</label>
                                     <input type="text" class="form-control"  value="" name="descripcion">
+                                    <br>
+                                    <button class="btn essence-btn">Alta</button>
+                                    <br>
                                 </div>
                                </div>
-                               <p></p>
-								<button>Alta</button>
-                                                             
+                           		</div>                           
                               </form>
                               
-                               <form action="ServletCamiseta?operacion=modificar" method="POST">
+                            <form action="ServletCamiseta?operacion=modificar" method="POST">
                             <div class="row">
-                           	<label><font size=4>Modificar Camiseta</font></label>
+                            <label><a href="#" onclick="changeModificarCamisetaDiv();"><h6>Modificar Camiseta</h6></a></label>
+                            <div id="desplegableModificar" class="noMostrar">
                            	 	<div class="col-md-12 mb-3">
                                     <label for="nombre">Id</label>
                                     <input type="text" class="form-control"  value="" name="id">
@@ -282,14 +320,10 @@
                                     <label for="apellidos">Precio</label>
                                     <input type="text" class="form-control"  value="" name="precio">
                                 </div>
-                               
-                                
                                 <div class="col-12 mb-3">
                                     <label for="Direccion">Genero</label>
-                                    <input type="text" class="form-control mb-3" value="" name="genero">
-                                   
+                                    <input type="text" class="form-control mb-3" value="" name="genero">   
                                 </div>
-                                
                                 <div class="col-12 mb-3">
                                     <label for="codigoPostal">Talla</label>
                                     <input type="text" class="form-control" value="" name="talla">
@@ -309,62 +343,65 @@
                                 <div class="col-12 mb-4">
                                     <label for="correo">Descripcion</label>
                                     <input type="text" class="form-control"  value="" name="descripcion">
+                                    <br>
+                                    <button class="btn essence-btn">Modificar</button>
+                                    <br>
                                 </div>
-                               </div>
-                               <p></p>
-								<button>Modificar</button>
-                                                             
+                             </div>
+                             </div>
                               </form>
                               
                               <form action="ServletCamiseta?operacion=baja" method="POST">
                             <div class="row">
-                           	<label><font size=4>Eliminar Camiseta</font></label>
+                            <label><a href="#" onclick="changeEliminarCamisetaDiv();"><h6>Eliminar Camiseta</h6></a></label>
+                           		<div id="desplegableEliminar" class="noMostrar">
                                 <div class="col-md-12 mb-3">
                                     <label for="nombre">Id</label>
                                     <input type="text" class="form-control"  value="" name="id">
+                                    <br>
+                                    <button class="btn essence-btn">Baja</button>
                                 </div>
-                               
                                </div>
-                               <p></p>
-								<button>Baja</button>
-                                                             
+                               </div>                     
                               </form>
+                              
                               <form action="ServletCamiseta?operacion=consulta" method="POST">
                             <div class="row">
-                           	<label><font size=4>Consultar Camiseta</font></label>
+                            <label><a href="#" onclick="changeConsultarCamisetaDiv();"><h6>Consultar Camiseta</h6></a></label>
+                           		<div id="desplegableConsultar" class="noMostrar">                            
                                 <div class="col-md-12 mb-3">
                                     <label for="nombre">Id</label>
                                     <input type="text" class="form-control"  value="" name="id">
+                                    <br>
+                                    <button class="btn essence-btn">Consulta</button>
                                 </div>
-                               
                                </div>
-                               <p></p>
-								<button>Consulta</button>
-                                                             
                               </form>
+                              
+                              
                          <!-- Espacio para la consulta de camisetas -->
-                         
                         <c:forEach var="mi" items="${Camiseta}">
                          
         					<div class="single_product_desc clearfix">
   
                         		<div >
-                        			<p><samp><b>CATEGORIA: </b> ${mi.categoria}</samp>
-                					<p><span><b>GENERO: </b>${mi.genero}</span>
+                        			<p><span><b>GENERO: </b>${mi.genero}</span>
+                        			<p><span><b>CATEGORIA: </b> ${mi.categoria}</span>
                     				<p><span><b>TALLA: </b> ${mi.talla}</span>
                     				<p><span><b>COLOR: </b> ${mi.color}</span>
                    					<p><span><b>STOCK: </b> ${mi.stock}</span>
                    					<p><span><b>PRECIO: </b>${mi.precio}€</span>
-                   					<p><span><b>DESCRIPCION: </b> ${mi.descripcion}</span>
-                   					
+                   					<p><span><b>DESCRIPCION: </b> ${mi.descripcion}</span>			
                 				</div>
         					  </div>
         				</c:forEach>
+        				
+        				
                               </div>
                               </div>
                               </div>
                               </div>
-                              </div>
+                              </div><br><br><br><br><br>
                        </div>
                               
                             
