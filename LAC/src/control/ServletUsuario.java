@@ -47,13 +47,10 @@ public class ServletUsuario extends HttpServlet {
 					Pantalla.write("No se pudo crear el nuevo usuario, el nick "+ u.getNick() + "ya existe.");
 					u.setNick(null);
 					request.setAttribute("usuario", u);
-					RequestDispatcher view = request.getRequestDispatcher("/formulario.jsp");
+					RequestDispatcher view = request.getRequestDispatcher("/index.html");
 					view.forward(request, response);
 				} else {
 					new BackOfficeDAO().altaUsuario(u);
-					request.setAttribute("usuario", u);
-					RequestDispatcher view = request.getRequestDispatcher("/login.jsp");
-					view.forward(request, response);
 				}
 				
 				
