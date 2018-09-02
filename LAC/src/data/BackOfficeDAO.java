@@ -131,17 +131,14 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 
 	public boolean comprobarUsuario(String nick) throws SQLException {
 		Statement st = null;
+		ResultSet rs = null;
 		ConexionDB con = new ConexionDB();
 		st = con.getConnection().createStatement();
 
 		String q = "SELECT * FROM `lac`.`usuarios` WHERE nick ='" + nick + "';";
-		ResultSet rs = st.executeQuery(q);
+		rs = st.executeQuery(q);
 
-		if (rs.next()) {
-			return true;
-		} else {
-			return false;
-		}
+		return rs.next();
 	}
 
 	public boolean validarUsuario(String nick, String contrasena) throws SQLException {
