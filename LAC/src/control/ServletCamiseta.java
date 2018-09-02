@@ -80,8 +80,8 @@ public class ServletCamiseta extends HttpServlet {
 			}else if(operacion.equalsIgnoreCase("consulta")) {
 				
 				int id = Integer.parseInt(request.getParameter("id"));
-				//Camiseta cam = new Camiseta();
-				Camiseta cam = new Camiseta();
+
+				List<Camiseta> cam = new ArrayList<Camiseta>();
 				cam = new BackOfficeDAO().consultarCamiseta(id);
 				request.setAttribute("Camiseta", cam);
 				

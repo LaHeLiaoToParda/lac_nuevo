@@ -29,7 +29,7 @@ public class BackOffice implements IBackOffice {
 	public void modificarCamiseta(int id, String color, float precio, String genero, String talla, String categoria, int stock, String imagen, String descripcion){
 		backOfficeDAO.modificarCamiseta(id, color, precio, genero, talla, categoria, stock, imagen, descripcion);
 	}
-	public Camiseta consultarCamiseta(int id){
+	public List<Camiseta> consultarCamiseta(int id){
 		return backOfficeDAO.consultarCamiseta(id);
 	}
 }

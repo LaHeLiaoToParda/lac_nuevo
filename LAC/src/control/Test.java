@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,9 +46,12 @@ public class Test {
 	}
 	public static void prueba2(){
 		
-		Camiseta h = new Camiseta();
-		h = new BackOfficeDAO().consultarCamiseta(16);
-		System.out.println(h.toString());
+		List<Camiseta> cam = new ArrayList<Camiseta>();
+		cam = new BackOfficeDAO().consultarCamiseta(16);
+		for(Camiseta e : cam){
+			System.out.println(e.toString());
+		}
+		
 	}
 	
 }

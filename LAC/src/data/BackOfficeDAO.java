@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -98,7 +99,8 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 	}
 
 	// Devuelve un camiseta de la base de datos pasandole un id
-	public Camiseta consultarCamiseta(int id) {
+	public List<Camiseta> consultarCamiseta(int id) {
+		List<Camiseta> cam = new ArrayList<Camiseta>();
 		Camiseta c = new Camiseta();
 		Statement st = null;
 		ResultSet rs = null;
@@ -118,12 +120,13 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 				c.setStock(rs.getInt("stock"));
 				c.setUrl(rs.getString("imagen"));
 				c.setDescripcion(rs.getString("descripcion"));
+				cam.add(c);
 			}
 			con.getConnection().close();
 		} catch (SQLException ex) {
 			Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
 		}
-		return c;
+		return cam;
 	}
 
 	public boolean comprobarUsuario(String nick) throws SQLException {
