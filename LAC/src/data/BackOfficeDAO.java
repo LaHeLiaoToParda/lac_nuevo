@@ -149,8 +149,7 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 		ConexionDB con = new ConexionDB();
 		st = con.getConnection().createStatement();
 
-		String q = "SELECT nick, contrasena FROM usuarios WHERE nick ='" + nick + "' AND contrasena='" + contrasena
-				+ "';";
+		String q = "SELECT * FROM usuarios WHERE nick ='" + nick + "' AND contrasena='" + contrasena + "';";
 		st.executeQuery(q);
 
 		if (st.getResultSet() != null) {

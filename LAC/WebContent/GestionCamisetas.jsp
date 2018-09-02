@@ -59,34 +59,22 @@
 						<ul>
 							<li><a href="#">Categoria</a>
 								<div class="megamenu">
-									<ul class="single-mega cn-col-4">
-										<li class="title"><a
-											href="ServletListado?operacion=genero&genero=HOMBRE&categoria=SOLO">HOMBRE</a></li>
-
-										<li><a
-											href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_CORTA">Manga
-												Corta</a></li>
-										<li><a
-											href="ServletListado?operacion=genero&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
-										<li><a
-											href="ServletListado?operacion=genero&genero=HOMBRE&categoria=MANGA_LARGA">Manga
-												Larga</a></li>
-
-									</ul>
-									<ul class="single-mega cn-col-4">
-										<li class="title"><a
-											href="ServletListado?operacion=genero&genero=MUJER&categoria=SOLO">MUJER</a></li>
-										<li><a
-											href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_CORTA">Manga
-												Corta</a></li>
-										<li><a
-											href="ServletListado?operacion=genero&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
-										<li><a
-											href="ServletListado?operacion=genero&genero=MUJER&categoria=MANGA_LARGA">Manga
-												Larga</a></li>
-									</ul>
-
+								<ul class="single-mega cn-col-4">
+									<li class="title"><a href="ServletListado?operacion=3&genero=HOMBRE">HOMBRE</a></li>
+									<li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_CORTA">Manga corta</a></li>
+                                    <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=TIRANTES">Tirantes</a></li>
+                                    <li><a href="ServletListado?operacion=4&genero=HOMBRE&categoria=MANGA_LARGA">Manga larga</a></li>
+								</ul>
+								<ul class="single-mega cn-col-4">
+									<li class="title"><a href="ServletListado?operacion=3&genero=MUJER">MUJER</a></li>
+                                   	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_CORTA">Manga corta</a></li>
+                                   	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=TIRANTES">Tirantes</a></li>
+                                   	<li><a href="ServletListado?operacion=4&genero=MUJER&categoria=MANGA_LARGA">Manga larga</a></li>
+								</ul>
+								<div class="single-mega cn-col-4">
+									<img src="img/camisetas/patopeque.jpg" alt="">
 								</div>
+							</div>
 						</ul>
 					</div>
 					<!-- Nav End -->
@@ -97,7 +85,7 @@
 			<div class="header-meta d-flex clearfix justify-content-end">
 				<!-- Search Area -->
 				<div class="search-area">
-					<form action="#" method="post">
+				<form action="ServletBarraBusqueda" method="POST">
 						<input type="search" name="search" id="headerSearch"
 							placeholder="Type for search">
 						<button type="submit">

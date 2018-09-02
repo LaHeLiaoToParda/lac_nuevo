@@ -34,7 +34,7 @@ public class Test {
 		Camiseta cam8 = new Camiseta(0,Categoria.MANGA_LARGA,40, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes8.jpg",33,"descripcion");
 		Camiseta cam9 = new Camiseta(0,Categoria.MANGA_LARGA,40, Talla.XL, Genero.HOMBRE, Color.ROJO, "/imagenes8.jpg",33,"descripcion");
 		//metodo Alta() no implementado, ya que deberia de ser una ventana en el navegador web con un formulario para introducir los datos
-		new CamisetaDAO().Alta(cam8);
+//		new CamisetaDAO().Alta(cam8);
 //		new CamisetaDAO().Alta(cam2);
 //		new CamisetaDAO().Alta(cam3);
 //		new CamisetaDAO().Alta(cam4);
@@ -52,6 +52,19 @@ public class Test {
 			System.out.println(e.toString());
 		}
 		
+	}
+	
+	public static void p3() throws SQLException {
+		String user = "pepe";
+		boolean cam;
+		cam = new BackOfficeDAO().comprobarUsuario(user);
+		
+		if(cam) {
+			System.out.println("Usuario "+user+" ya existe");
+		} else {
+			System.out.println("Usuario "+user+" no existe");
+			
+		}
 	}
 	
 }
