@@ -41,11 +41,12 @@ public class ServletCamiseta extends HttpServlet {
 			String operacion = request.getParameter("operacion");
 			
 			if(operacion.equalsIgnoreCase("alta")) {
-				c.setColor(Color.valueOf(request.getParameter("color")));
+				
+				c.setColor(Color.valueOf(request.getParameter("color").toUpperCase()));
 				c.setPrecio(Float.parseFloat(request.getParameter("precio")));
-				c.setGenero(Genero.valueOf(request.getParameter("genero")));
-				c.setTalla(Talla.valueOf(request.getParameter("talla")));
-				c.setCategoria(Categoria.valueOf(request.getParameter("categoria")));
+				c.setGenero(Genero.valueOf(request.getParameter("genero").toUpperCase()));
+				c.setTalla(Talla.valueOf(request.getParameter("talla").toUpperCase()));
+				c.setCategoria(Categoria.valueOf(request.getParameter("categoria").toUpperCase()));
 				c.setStock(Integer.parseInt(request.getParameter("stock")));
 				c.setUrl(request.getParameter("url"));
 				c.setDescripcion(request.getParameter("descripcion"));
