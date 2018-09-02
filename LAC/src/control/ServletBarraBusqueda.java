@@ -74,8 +74,7 @@ public class ServletBarraBusqueda extends HttpServlet
             
                     || busqueda.equalsIgnoreCase("camisetas de chico") || busqueda.equalsIgnoreCase("camiseta chico")
                     || busqueda.equalsIgnoreCase("camisetas hombre") || busqueda.equalsIgnoreCase("camisetas chico")
-                    || busqueda.equalsIgnoreCase("camiseta hombre"))//
-            {
+                    || busqueda.equalsIgnoreCase("camiseta hombre")) {
                 cam = new CamisetaDAO().mostrarCamisetasGenero("hombre");
                 /**
                  * cargamos nuestra LISTA con el metodo segun genero de nuestra interfaz CamisetasDAO
@@ -93,51 +92,90 @@ public class ServletBarraBusqueda extends HttpServlet
                 /**
                  * con view.forward ejecutamos el metodo.
                  */
+                
             } else if (busqueda.equalsIgnoreCase("mujer") || busqueda.equalsIgnoreCase("camisetas de mujer")
                     || busqueda.equalsIgnoreCase("camisetas de chica") || busqueda.equalsIgnoreCase("camiseta chica")
                     || busqueda.equalsIgnoreCase("camisetas mujer") || busqueda.equalsIgnoreCase("camisetas chica")
-                    || busqueda.equalsIgnoreCase("camiseta mujer"))//
-            {
+                    || busqueda.equalsIgnoreCase("camiseta mujer")) {
                 cam = new CamisetaDAO().mostrarCamisetasGenero("mujer");
                 request.setAttribute("Lista", cam);
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
+                
             } else if (busqueda.equalsIgnoreCase("camisetas") || busqueda.equalsIgnoreCase("camiseta")
-                    || busqueda.equalsIgnoreCase("camis"))//
-            {
+                    || busqueda.equalsIgnoreCase("camis")) {
                 cam = new CamisetaDAO().listadoCamisetas();
                 request.setAttribute("Lista", cam);
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
+                
             } else if (busqueda.equalsIgnoreCase("manga corta") || busqueda.equalsIgnoreCase("camisetas corta")
                     || busqueda.equalsIgnoreCase("camiseta corta") || busqueda.equalsIgnoreCase("camiseta manga corta")
-                    || busqueda.equalsIgnoreCase("corta"))//
-            {
+                    || busqueda.equalsIgnoreCase("corta")) {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("MANGA_CORTA");
                 request.setAttribute("Lista", cam);
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
-            }
-            else if (busqueda.equalsIgnoreCase("manga larga") || busqueda.equalsIgnoreCase("camisetas larga")
+                
+            } else if (busqueda.equalsIgnoreCase("manga larga") || busqueda.equalsIgnoreCase("camisetas larga")
                     || busqueda.equalsIgnoreCase("camiseta larga") || busqueda.equalsIgnoreCase("camiseta manga larga")
-                    || busqueda.equalsIgnoreCase("larga"))//
-            {
+                    || busqueda.equalsIgnoreCase("larga")) {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("MANGA_LARGA");
                 request.setAttribute("Lista", cam);
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
-            }
-            else if (busqueda.equalsIgnoreCase("sin manga") || busqueda.equalsIgnoreCase("camisetas tirantes")
+                
+            } else if (busqueda.equalsIgnoreCase("sin manga") || busqueda.equalsIgnoreCase("camisetas tirantes")
                     || busqueda.equalsIgnoreCase("camiseta tirantes") || busqueda.equalsIgnoreCase("camiseta sin mangas")
-                    || busqueda.equalsIgnoreCase("tirantes")|| busqueda.equalsIgnoreCase("tirante"))//
-            {
+                    || busqueda.equalsIgnoreCase("tirantes")|| busqueda.equalsIgnoreCase("tirante")) {
                 cam = new CamisetaDAO().mostrarCamisetasCategoria("TIRANTES");
                 request.setAttribute("Lista", cam);
                 RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
                 view.forward(request, response);
-            }
-            else
-            {
+                
+            } else if(busqueda.equalsIgnoreCase("azul") || busqueda.equalsIgnoreCase("camiseta azul") 
+            		|| busqueda.equalsIgnoreCase("camisetas azules") || busqueda.equalsIgnoreCase("azules")) {
+            	cam = new CamisetaDAO().mostrarCamisetasColor("azul");
+                request.setAttribute("Lista", cam);
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                view.forward(request, response);
+            	
+            } else if(busqueda.equalsIgnoreCase("roja") || busqueda.equalsIgnoreCase("rojo") || busqueda.equalsIgnoreCase("camiseta roja") 
+            		|| busqueda.equalsIgnoreCase("camisetas rojas") || busqueda.equalsIgnoreCase("rojas") ) {
+            	cam = new CamisetaDAO().mostrarCamisetasColor("rojo");
+                request.setAttribute("Lista", cam);
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                view.forward(request, response);
+            	
+            } else if(busqueda.equalsIgnoreCase("verde") || busqueda.equalsIgnoreCase("verdes") || busqueda.equalsIgnoreCase("camiseta verde") 
+            		|| busqueda.equalsIgnoreCase("camisetas verdes")) {
+            	cam = new CamisetaDAO().mostrarCamisetasColor("verde");
+                request.setAttribute("Lista", cam);
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                view.forward(request, response);
+            	
+            } else if(busqueda.equalsIgnoreCase("negro") || busqueda.equalsIgnoreCase("negra") || busqueda.equalsIgnoreCase("camiseta negra") 
+            		|| busqueda.equalsIgnoreCase("camisetas negras") || busqueda.equalsIgnoreCase("negras")) {
+            	cam = new CamisetaDAO().mostrarCamisetasColor("negro");
+                request.setAttribute("Lista", cam);
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                view.forward(request, response);
+            	
+            } else if(busqueda.equalsIgnoreCase("naranja") || busqueda.equalsIgnoreCase("naranjas") || busqueda.equalsIgnoreCase("camiseta naranja") 
+            		|| busqueda.equalsIgnoreCase("camisetas naranjas")) {
+            	cam = new CamisetaDAO().mostrarCamisetasColor("naranja");
+                request.setAttribute("Lista", cam);
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                view.forward(request, response);
+            	
+            } else if(busqueda.equalsIgnoreCase("rosa") || busqueda.equalsIgnoreCase("rosas") || busqueda.equalsIgnoreCase("camiseta rosa") 
+            		|| busqueda.equalsIgnoreCase("camisetas rosas")) {
+            	cam = new CamisetaDAO().mostrarCamisetasColor("rosa");
+                request.setAttribute("Lista", cam);
+                RequestDispatcher view = request.getRequestDispatcher("/busqueda.jsp");
+                view.forward(request, response);
+            	
+            } else {
             	/**
                  * En el caso de que la palabra recogida del input no entren en ningun filtro, llegara aqui y le redireccionaremos
                  * a un jsp donde le especifacara al usuario su busqueda y que no se han encontrado productos.

@@ -118,6 +118,36 @@ public class CamisetaDAO implements ICamisetaDAO {
         return camisetasGenero;
 	}
 	
+	//devolver coleccion segun color
+	public List<Camiseta> mostrarCamisetasColor(String color) {
+		List camisetasColor = new ArrayList<Camiseta>();
+        Statement st = null;
+        ResultSet rs = null;
+        
+        try {
+            ConexionDB con = new ConexionDB();
+            st = con.getConnection().createStatement();
+            rs = st.executeQuery("SELECT * FROM camisetas WHERE color ='" + color + "'");
+            while (rs.next()) {   	
+            	Camiseta c = new Camiseta();
+            	c.setId(rs.getInt("id"));
+                c.setColor(Color.valueOf(rs.getString("color")));
+                c.setPrecio((rs.getFloat("precio")));
+                c.setGenero(Genero.valueOf(rs.getString("genero")));
+                c.setTalla(Talla.valueOf(rs.getString("talla")));
+                c.setCategoria(Categoria.valueOf(rs.getString("categoria")));
+                c.setStock(rs.getInt("stock"));
+                c.setUrl(rs.getString("imagen"));
+                c.setDescripcion(rs.getString("descripcion"));
+                camisetasColor.add(c);
+            }
+            con.getConnection().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CamisetaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return camisetasColor;
+	}
+	
 	//devolver coleccion segun categoria
 	public List<Camiseta> mostrarCamisetasCategoria(String categoria) {
 		List camisetasCategoria = new ArrayList<Camiseta>();

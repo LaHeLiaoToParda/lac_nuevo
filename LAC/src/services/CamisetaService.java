@@ -17,6 +17,10 @@ public class CamisetaService implements ICamisetaService {
 	public List<Camiseta> mostrarCamisetasGeneroCategoria(String genero, String categoria) {
 		return CamisetaDAO.mostrarCamisetasGeneroCategoria(genero, categoria);
 	}
+	
+	public List<Camiseta> mostrarCamisetasColor(String color) {
+		return CamisetaDAO.mostrarCamisetasColor(color);
+	}
 
 	public List<Camiseta> mostrarCamisetasGenero(String genero) {
 		return CamisetaDAO.mostrarCamisetasGenero(genero);
