@@ -51,6 +51,9 @@ public class ServletUsuario extends HttpServlet {
 					view.forward(request, response);
 				} else {
 					new BackOfficeDAO().altaUsuario(u);
+					request.setAttribute("usuario", u);
+					RequestDispatcher view = request.getRequestDispatcher("/login.jsp");
+					view.forward(request, response);
 				}
 				
 				

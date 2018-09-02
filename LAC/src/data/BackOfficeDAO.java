@@ -143,17 +143,14 @@ public class BackOfficeDAO implements IBackOfficeDAO {
 
 	public boolean validarUsuario(String nick, String contrasena) throws SQLException {
 		Statement st = null;
+		ResultSet rs = null;
 		ConexionDB con = new ConexionDB();
 		st = con.getConnection().createStatement();
 
 		String q = "SELECT * FROM usuarios WHERE nick ='" + nick + "' AND contrasena='" + contrasena + "';";
-		st.executeQuery(q);
+		rs = st.executeQuery(q);
 
-		if (st.getResultSet() != null) {
-			return true;
-		} else {
-			return false;
-		}
+		return rs.next();
 	}
 
 	// elimina un usuario de la bbdd segun el dni (Para el 3er Sprint)
