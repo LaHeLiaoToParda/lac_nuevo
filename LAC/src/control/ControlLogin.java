@@ -1,5 +1,7 @@
 package control;
-
+/**
+ * @author Jorge
+ */
 import java.io.IOException;
 import java.util.List;
 
@@ -18,9 +20,20 @@ import model.Camiseta;
 import model.Usuario;
 
 /**
- * Servlet implementation class controlSesiones
+ * Servlet login que utiliza sesiones para almacenar la información
+ */
+/**
+ * 
+ * ruta que utilizará el jsp para mostrar las peticiones del servlet en pantalla
+ *
  */
 @WebServlet("/ControlLogin")
+/**
+ * 
+ * clase httpServlet que hereda la clase contrologin para utilizar sus métodos y realizar la petición del usuario y llevarlo al jsp
+ *
+ */
+
 public class ControlLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,6 +45,14 @@ public class ControlLogin extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    /**
+	 * Metodo que realiza el login de un usuario, comparando en la BBDD si existe usuario y contreseña.
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -48,6 +69,10 @@ public class ControlLogin extends HttpServlet {
 			validado = new BackOfficeDAO().validarUsuario(nick,pass);
         	
         		if(validado==true){
+        			/**
+        			 * Objeto que guarda la información de la sesión
+        			 * @param HttpSesion
+        			 */
         			HttpSession session = request.getSession();
     				
     				

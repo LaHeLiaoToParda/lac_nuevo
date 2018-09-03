@@ -1,5 +1,7 @@
 package control;
-
+/**
+ * @author Jorge
+ */
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +17,12 @@ import utilities.Pantalla;
  * Servlet implementation class ServletUsuario
  */
 @WebServlet("/ServletUsuario")
+
+/**
+ *                       
+ * @param HttpServlet hereda la clase ServletUsuario para utilizar sus métodos y realizar la petición del usuario y llevarlo al jsp
+ *
+ */
 public class ServletUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,7 +32,13 @@ public class ServletUsuario extends HttpServlet {
     public ServletUsuario() {
         super();
     }
-    
+    /**
+	 * Metodo que realiza el alta de un usuario, guardando datos en la base de datos o avisando si el usuario existe.
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
