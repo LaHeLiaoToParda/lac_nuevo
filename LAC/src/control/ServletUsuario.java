@@ -18,20 +18,17 @@ import utilities.Pantalla;
  */
 @WebServlet("/ServletUsuario")
 
-/**
- *                       
+/**                       
  * @param HttpServlet hereda la clase ServletUsuario para utilizar sus métodos y realizar la petición del usuario y llevarlo al jsp
- *
  */
 public class ServletUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public ServletUsuario() {
         super();
     }
+    
     /**
 	 * Metodo que realiza el alta de un usuario, guardando datos en la base de datos o avisando si el usuario existe.
 	 * @param request
@@ -45,8 +42,19 @@ public class ServletUsuario extends HttpServlet {
 		Usuario u = new Usuario();
 
 		try {
-			String operacion = request.getParameter("operacion");
 			
+			/**
+			 * @param operacion - recoge un int y asigna a cada if correspondiente
+			 * @param 
+			 * @param alta - Asigna el alta para recoger los datos introducidos en el formulario
+			 * @param nick - Recoge el nick del usuario que se registra
+			 * @param nombre - Recoge el nombre del usuario que se registra
+			 * @param apellidos - Recoge el apellidos del usuario que se registra
+			 * @param contrasena - Recoge el contrasena del usuario que se registra
+			 * @param direccion - Recoge el direccion del usuario que se registra
+			 * 
+			 */
+			String operacion = request.getParameter("operacion");
 			if(operacion.equalsIgnoreCase("alta")){
 				u.setNick(request.getParameter("nick"));
 				u.setNombre(request.getParameter("nombre"));
@@ -56,7 +64,9 @@ public class ServletUsuario extends HttpServlet {
 				
 				boolean yaExiste = false;
 				yaExiste = new BackOfficeDAO().comprobarUsuario(u.getNick());
-				
+				/**
+				 * if para realizar la validacion de los datos introducidos
+				 */
 				if(yaExiste) {
 					Pantalla.write("No se pudo crear el nuevo usuario, el nick "+ u.getNick() + "ya existe.");
 					u.setNick(null);
