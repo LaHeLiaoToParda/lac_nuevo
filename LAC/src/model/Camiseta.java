@@ -9,7 +9,7 @@ import utilities.Pantalla;
 
 /**
  * Esta clase define el objeto Camiseta.
- * @author admin
+ * @author javier
  *
  */
 public  class Camiseta {
