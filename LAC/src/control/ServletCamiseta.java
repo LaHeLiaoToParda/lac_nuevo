@@ -18,9 +18,6 @@ import model.Genero;
 import model.Talla;
 
 
-/**
- * Servlet implementation class ServletCamiseta
- */
 @WebServlet("/ServletCamiseta")
 public class ServletCamiseta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,7 +28,7 @@ public class ServletCamiseta extends HttpServlet {
     public ServletCamiseta() {
         super();
     }
-    
+ 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
@@ -39,7 +36,7 @@ public class ServletCamiseta extends HttpServlet {
 
 		try {
 			String operacion = request.getParameter("operacion");
-			
+					
 			if(operacion.equalsIgnoreCase("alta")) {
 				
 				c.setColor(Color.valueOf(request.getParameter("color").toUpperCase()));
@@ -50,18 +47,19 @@ public class ServletCamiseta extends HttpServlet {
 				c.setStock(Integer.parseInt(request.getParameter("stock")));
 				c.setUrl(request.getParameter("url"));
 				c.setDescripcion(request.getParameter("descripcion"));
-				
+	
 				new BackOfficeDAO().altaCamiseta(c);
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
-				
+
 			} else if(operacion.equalsIgnoreCase("baja")) {
 				int id = Integer.parseInt(request.getParameter("id"));
 				
 				new BackOfficeDAO().bajaCamiseta(id);
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
-		
+				
+				
 			} else if(operacion.equalsIgnoreCase("modificar")) {
 				int id = Integer.parseInt(request.getParameter("id"));
 				String color = request.getParameter("color");
@@ -77,6 +75,7 @@ public class ServletCamiseta extends HttpServlet {
 				
 				RequestDispatcher view = request.getRequestDispatcher("/GestionCamisetas.jsp");
 				view.forward(request, response);
+	
 			}else if(operacion.equalsIgnoreCase("consulta")) {
 				
 				int id = Integer.parseInt(request.getParameter("id"));
